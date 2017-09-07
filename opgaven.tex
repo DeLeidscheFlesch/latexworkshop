@@ -1,0 +1,129 @@
+ % -> commentaar
+
+% De documentclass 'article' is de beste voor bijna elke situatie.
+\documentclass{article}
+
+% Packages:
+\usepackage[a4paper]{geometry} % Eenvoudig aanpassen van paginamaat en marges.
+\usepackage[dutch]{babel} % Juiste afbreekregels en dergelijke!
+\usepackage{parskip} % Alinea's beginnen links uitgelijnd en er staat een lege regel tussen alinea's.
+\usepackage{amsmath, amssymb, textcomp} % Wiskundige symbolen e.d.
+\usepackage{color} % Kleuren
+\usepackage{graphicx} % Plaatjes
+\usepackage{enumerate} % Voor opsommingen
+\usepackage{hyperref}
+\usepackage[official]{eurosym}
+
+
+\newcommand{\beqn}{\begin{eqnarray*}}
+\newcommand{\eeqn}{\end{eqnarray*}}
+
+% Hier begint het echte document.
+\begin{document}
+
+\title{\LaTeX-workshop (Opgaven)}
+\author{De Leidsche Flesch}
+\date{\today}
+
+\maketitle
+
+\section{\LaTeX}
+	\begin{enumerate}
+		\item Zoek op het internet op wat het verschil is tussen \TeX \ en \LaTeX.
+	\end{enumerate}
+	
+\section{Nieuw document}
+	\begin{enumerate}
+		\item Begin een \LaTeX-document met de tekst \emph{Hello world!}.
+	\end{enumerate}
+	
+\section{Tekst}
+	\begin{enumerate}
+		\item Zoek op internet een korte uitleg op van de definitie van Latex (\'e\'en zin), en citeer deze zin. Gebruik hiervoor een \verb+\footnote{}+ om te verwijzen naar je bron, en eventueel een \verb+\url{}+ (hierbij moet je het pakket `url' includen).
+		\item Zoek op (op internet) hoe je accenten kunt maken, zoals co\"ordinaat, caf\'e, cura\c{c}ao\"enaar, etc. Kijk ook naar het verschil tussen 'tekst' en `tekst'.
+		\item Sommige karakters, zoals \{ hebben al een betekenis binnen \LaTeX. Hoe denk je dat \LaTeX\ dit probleem zou oplossen; hoe zien de commando's er standaard uit?
+		\item Als je code, zoals \verb.C++.-code in \LaTeX \ zou willen invoegen, gebruik dan \verb.\verb+.text\verb.+.. Schrijf bijvoorbeeld \verb.{\/'^.. Wat doet \verb.\begin{verbatim}.? Je kunt ook het package \texttt{listings} gebruiken. Kijk hiervoor in de handleiding onder het kopje `Code'.
+	\end{enumerate}
+
+
+\section{Math-mode}
+\begin{enumerate}
+	\item Reproduceer de volgende formules, let op de accolades!
+	\begin{itemize}
+		\renewcommand{\labelitemi}{\(\circ\)}
+			\item\(a_{1,1} + a_{1,2} + \ldots + a_{1,n} = \sum_{i = 1}^n a_{1,i}\)\\
+			\item\( 1 \in \{ x~|~\mathbb{R} \backslash 2^{3^4} \}\)\\
+			\item\(\lim_{n \to \infty} 2^{-n} = 0\)\\
+			\item\(\log_2(x\cdot y) \lor \log_4(x\cdot y)\)
+		\end{itemize}
+	\item Zet de vorige formules tussen \verb+\[+... \verb+\]+ (blokhaken). Wat zie je voor verschil? 
+	\item Reproduceer de volgende regels (gecentreerd). Hint: $\mathbb{R} =$ \verb.\mathbb{R}. en gebruik \verb|\text{...}|.
+Foutmelding? Lees het onderwerp `Math-mode' nog eens door in de handleiding en zoek op of je ook nog andere packages nodig hebt.
+		\begin{equation}\forall \ a,b \in \mathbb{R}_{>0} \text{ geldt } a^{\frac{b}{c}} = \sqrt[c]{a^b} = \left(\sqrt[c]{a}\right)^b\end{equation}
+		\begin{equation}\int_a^b |f(x)|dx \geq \left|\int_a^b f(x)dx\right|\end{equation}
+	\item Reproduceer de volgende regels met behulp van \texttt{align} (Tip: gebruik * en \verb.\partial .) (dit kan alleen als je het pakket \emph{amsmath} hebt ge\"include)
+			\begin{align*} 
+			f(x_1,x_2) 	& = \sum_{n_1 = 1}^\infty \sum_{n_2 = 1}^\infty \frac{(x_1 - a_1)^{n_1}(x_2-a_2)^{n_2}}{n_1!n_2!} \left[ \frac{\partial^{n_1+n_2}f}{\partial x_1^{n_1} \partial x_2^{n_2}} \right] (a_1,a_2) \\
+							    & \approx f(a_1,a_2) + (x-a_1)f_{x_1}(a_1,a_2) + (x-a_2)f_{x_2}(a_1,a_2) \\
+			\end{align*}
+\end{enumerate}
+
+
+\section{Array's}
+	\begin{enumerate}
+		\item Wat gebeurt er als je de \verb.c. in de code verandert in een \verb.l. of \verb.r. of als je een \verb.|. tussen \'e\'en van de \verb.c.'s zet? Wat doet \verb.\hline .?
+		\item Een matrix kun je netter in de tekst zetten door gebruik te maken van \verb.\begin{smallmatrix}.. Bekijk hoe dit werkt.
+		\item Het gebruik van tabellen lijkt erg op array's. Onderzoek hoe \verb.tabular. werkt en reproduceer de volgende tabel:\\
+		\\
+			\begin{tabular}{c|ccc}
+		 		 		    & 			        & KP 			  & 				\\
+				\(x\)		& 			        & \(\tfrac{1}{\sqrt{2}}\) 	& 				\\
+				\hline
+		 		\(f'\) 	& \(-\) 		    & \(0\) 		& \(+\) 			\\
+		 		\(f\) 	& \(\searrow\)	& \(\min\)  & \(\nearrow\)		
+			\end{tabular}
+	\end{enumerate}
+Kijk ook naar hoe je de uitlijning in tabelcellen kunt veranderen.
+\section{Macro's}
+\begin{enumerate}
+	\item Maak een commando \verb.\QED. voor het symbol $\Box$ (\verb.\Box)., dat rechts uitlijnt (hint: \verb.\begin{flushright}.), zodat \verb.\QED. aan het eind van een bewijs in de code geeft:
+		\begin{flushright}\(\Box\)\end{flushright}
+(Let op: ga goed na in welk environments je moet zitten en op ga na op welke manier je deze moet combineren)
+ Hint: doe om je \verb+\Box+ de gebruikelijke \verb+\(+ en \verb+\)+-tekens.
+	\item Zorg dat je het commando \verb+\begin{eqnarray*}+ (en \verb+\end{eqnarray*}+) met \verb+\beqn+ (en \verb+\eeqn+) kunt aanroepen.
+	\item Maak een commando \verb+\modu{a}{b}{c}+ aan dat geeft \(a \equiv b \bmod c\) en een commando \verb.\moda{a}{b}. dat geeft \(\overline{a} = \overline{b}\).
+\end{enumerate}
+
+
+\section{Zelf op onderzoek uit}
+\begin{enumerate}
+	\item Reproduceer de volgende formules:
+	\begin{enumerate}
+		\item \[  \{(a,b) \in \mathbb{Z}^2 : b \neq 0\} \]
+		\item \[\overrightarrow{AB_{\pm}} = \langle a, \pm b \rangle = a\mathbf{i} \pm b\mathbf{j}\]
+		\item \euro 42,- (hiervoor heb je een pakket nodig)
+		\item Let op de spatie tussen \textquotesingle\(\exists\)\textquotesingle \ en \textquotesingle\(\eta\)\textquotesingle! Hint: gebruik \verb|\stackrel{...}{...}| en \verb.\mathcal.
+			\[\exists \ \eta :\mathcal{A} \hookrightarrow \mathcal{B}, \zeta : \mathcal{B} \hookrightarrow \mathcal{A}\]
+			\[\Updownarrow\]
+			\[\exists \ \beta : \mathcal{A} \stackrel{\sim}{\longrightarrow} \mathcal{B}\]
+		\item \verb+\underbrace+
+			\[\forall \ A, B \in V :  \underbrace{\neg(A \wedge B)}_{\text{niet } A \text{ en } B} \Longleftrightarrow \underbrace{(\neg A) \vee (\neg B)}_{\text{niet } A \text{ of niet } B}\]
+		\item 			\[f : A \cup B \to \{0,1\} \text{ met } A \cap B = \emptyset \text{ gedefinieerd door } x \mapsto \begin{cases} 0 & \text{ als } x \in A\\1 & \text{ als } x \in B \end{cases}\]
+		\item 
+			\[\binom{k}{n} = \prod_{l = 1}^n\frac{k-l+1}{l}\]
+		\item	
+			\[\Omega \setminus \left[\bigcup_{i \in I}\left(\bigcup_{j \in J} A_{i,j} \right)\right] \subseteq \left(\bigcap_{\begin{smallmatrix} i \in I \\ j \in J \end{smallmatrix}} A_{i,j}\right)^c\]
+		\item
+			\[A = \left.\left(
+			\begin{array}{cccccc}
+				\dot{t} 	& 0 		& 0		& \ldots 	& 0 		& 0\\
+				0 		& t 		& 0		& \ldots 	& 0 		& 0\\
+				0 		& 0 		& \dot{t} & \ldots 	& 0 		& 0\\
+				\vdots 	& \vdots 	& \vdots 	& \ddots 	& \vdots 	& \vdots \\
+				0 		& 0 		& 0 		& \ldots 	& t 		& 0\\
+				0 		& 0 		& 0 		& \ldots 	& 0 		& \dot{t}
+			\end{array}\right)\right|_{t = 0}\]
+	\end{enumerate}
+\end{enumerate}
+  
+\end{document} % Hier eindigt het document.

@@ -1,0 +1,526 @@
+% =========================== DISCLAIMER ==================================
+% Dit document is gemaakt voor de LaTeX-workshop van studievereniging De
+% Leidsche Flesch. Onjuistheden kunnen gemeld worden bij het bestuur 
+% via e-mailadres onderwijs@deleidscheflesch.nl.
+%
+% Met dank aan Erik Massop voor het verzorgen van de commentaarblokken.
+% =========================================================================
+
+% Een LaTeX-file bestaat uit twee delen. Het eerste deel wordt de preamble
+% genoemd. Dit is de plek om dingen te doen die effect hebben op het hele
+% document, bijvoorbeeld het laden van de juiste documentclass, het laden van
+% pakketten, het configureren van deze pakketten en het definiëren van eigen
+% commando's.
+%
+% Het tweede deel begint bij \begin{document} en eindigt bij \end{document}.
+% Hier staat de inhoud van het document.
+
+
+% Alles op een regel na het symbool % is commentaar -- en ook alle witruimte aan
+% het begin op de volgende regel. Dit is omdat witruimte in TeX vaak betekenis
+% heeft.
+
+
+%%%%% DE DOCUMENTCLASS %%%%%
+
+% De documentclass 'article' is de beste voor bijna elke situatie.
+\documentclass{article}
+
+%%%%% PAKKETTEN LADEN EN CONFIGUREREN %%%%%
+
+% We laden een aantal pakketten om LaTeXs functionaliteit aan te passen en uit
+% te breiden.
+
+% Dit package zorgt voor gemakkelijke wijziging van papierformaat, marges en
+% dergelijke. Mensen hebben goed nagedacht over de standaardwaarden, dus je
+% hoeft typisch niets aan te passen.
+\usepackage[a4paper]{geometry}
+
+% Dit package zorgt voor afbreekregels en hier en daar vertaling. Bij
+% 'vertaling' moet je denken aan "Hoofdstuk" in plaats van "Chapter" bij de
+% documentclass book. We laden ook Engels, opdat we juiste afbreking in Engelse
+% citaten kunnen krijgen. De laatstgenoemde taal tussen de vierkante haken is de
+% hoofdtaal.
+\usepackage[english,dutch]{babel}
+
+% Dit pakket wijzigt de weergave van alinea's. Er wordt niet langer
+% ingesprongen en er verschijnt witruimte tussen de alinea's. Je moet maar
+% kijken wat je het mooist vindt.
+\usepackage{parskip}
+
+% Dit zijn een aantal pakketten van de AMS, de American Mathematical Society.
+% Deze bevatten allerlei commando's om wiskunde makkelijker en mooier weer
+% te geven.
+\usepackage{amsmath, amssymb}
+
+% Dit laadt support voor kleuren.
+\usepackage{color}
+
+% Dit is een standaardpakket om losse plaatjes in te voegen.
+\usepackage{graphicx} % Plaatjes
+
+% Met \begin{enumerate} wordt er een genummerde lijst gestart. Dit pakket zorgt
+% dat je het type nummering makkelijk naar eigen smaak kan aanpassen. Zo kun je
+% a:/b:/c: nummeren, i)/ii)/iii) of toch maar gewoon 1./2./3..
+\usepackage{enumerate}
+
+% Dit maakt het eurosymbool beschikbaar.
+\usepackage[official]{eurosym}
+
+% Dit geeft het commando \url{...}, waarmee urls heel leesbaar weergegeven
+% worden.
+\usepackage{url}
+
+% Dit pakket zorgt voor extra flexibiliteit bij het gebruik van 'floats'. Dat
+% zijn dingen die door je document 'drijven'. Dit gebruik je voor bijvoorbeeld
+% plaatjes of grote tabellen.
+\usepackage{float}
+
+% Dit pakket zorgt voor commando's om code met syntax highlighting weer te
+% geven. We configureren het ook meteen voor C++.
+\usepackage{listings}
+\lstset{language=C++}
+
+\usepackage{listings} % Voor programmeercode
+\lstset{language=C++}
+
+
+%%%%% EIGEN COMMANDO'S DEFINIEREN %%%%%
+
+\newcommand{\beqn}{\begin{eqnarray*}} % Zie opgave 6
+\newcommand{\eeqn}{\end{eqnarray*}} % Zie opgave 6
+
+\newcommand{\N}{\mathbb{N}} % Zie opgave 6
+\newcommand{\pyth}[3]{#1^2 + #2^2 = #3^2} % Zie opgave 6
+
+
+
+%%%%% ENIGE METADATA DEFINIEREN %%%%%
+
+% Dit wordt gebruikt voor \maketitle, en kun je ook gebruiken als je ergens
+% anders de titel/auteur/datum van je document weer wil geven. Bijvoorbeeld in
+% kop of voetteksten.
+
+\title{\LaTeX-workshop (Handleiding)}
+\author{De Leidsche Flesch}
+\date{\today}	% Voeg automatisch de datum in
+
+
+
+%%%%% HET 'ECHTE' DOCUMENT %%%%%
+\begin{document}
+
+
+% We geven eerst titel, auteur en datum weer met het commando \maketitle. Dit 
+% zet deze gegevens neer zoals eerder ingevuld. De tekstgrootte wordt automatisch
+% bepaald. 							
+% Meteen daarna komt inhoudsopgave. Vervolgens beginnen we een nieuwe pagina, 
+% zodat de eerste tekst niet direct onder de inhoudsopgave begint.
+\maketitle
+\tableofcontents
+\newpage
+
+% Een document dat gebruikt maakt van de documentclass article wordt ingedeeld
+% in sections, subsections en subsubsections.
+\section{Inleiding}
+
+Dit is de handleiding horende bij de \LaTeX-workshop van De Leidsche Flesch.
+Kijk allereerst deze handleiding door. Het is slim om meteen de broncode van
+deze handleiding erbij te houden, zodat je een idee krijgt hoe een \LaTeX-code
+eruit ziet. Ga vervolgens aan de slag met de opdrachten van het werkblad. Het is
+de bedoeling dat je bij het maken van deze opdrachten gaat zoeken in de broncode
+van de handleiding en eventueel op internet. Een grote bron van informatie
+hierbij is het \LaTeX-Wikibook\cite{wikibook}.
+
+% Alinea's scheidt je in LaTeX met een (of meerdere) lege regels. Je kunt ook
+% het commando \par gebruiken. Verder wordt alle witruimte in principe hetzelfde
+% behandeld. Dus als je twee spaties, een tab, of een 'enter' wilt typen in
+% plaats van een enkele spatie, ga je gang.
+
+Je zult waarschijnlijk een aantal keer iets fout doen, omdat je \emph{ergens in
+je code} iets net verkeerd doet. Dit is bewust de opzet van deze workshop, omdat
+je later bij het gebruik van \LaTeX\ hier gegarandeerd mee te maken gaat krijgen
+en het dus belangrijk is om dit op te kunnen lossen. Onthoud verder ook dat er
+meestal meerdere manieren zijn om iets weer te geven, met telkens net een iets
+andere lay-out. Het is vaak een kwestie van keuze wat je fijner vindt.
+
+% Je vraagt je misschien af waarom hierboven "\LaTeX\ hier" staat en niet gewoon
+% "\LaTeX hier". Dit is omdat commando's zonder argumenten typisch alle
+% witruimte opeten die na hun komt. "\LaTeX hier" zou dus "LaTeXhier" opleveren
+% bij het compileren van het document. Om dit tegen te werken staat er hier een
+% harde spatie "\ ". Een andere manier om het probleem hier op te lossen is
+% "\LaTeX{} hier".
+
+\subsection{Beginnen}
+
+Om te beginnen met de workshop volg je de volgende stappen:
+\begin{enumerate}
+\item Zorg ervoor dat je computer in Linux (Ubuntu) opgestart is (je ziet dan links aan het scherm een balk met iconen). Draait je computer Windows, start dan de computer opnieuw op en kies in het menu voor de optie Ubuntu.
+\item Start het programma Texmaker op. Hierin kun je straks je opgaven maken.
+\item Lees deze handleiding globaal door (de handleiding en opgavenbundel zijn (ook) te vinden op de website\footnote{\url{http://www.deleidscheflesch.nl/p/latex-workshop}\newline Ook na de workshop blijven deze bestanden online staan.}. 
+\item Pak de opgavenbundel erbij.
+\item Je kunt nu de opgaven gaan maken in Texmaker. Voor inspiratie kun je de handleiding grondig doorlezen, de source code van de handleiding gebruiken en het internet afstruinen.
+\end{enumerate}
+
+% Okay, we beginnen aan de volgende sectie!
+\section{\LaTeX}
+
+Alle informatie in deze paragraaf komt uit een handleiding\footnote{A not so
+short introduction to \LaTeX,
+\url{http://http://tobi.oetiker.ch/lshort/lshort.pdf}}.
+
+% Aan die handleiding, vaak kortweg lshort genoemd, heb je ook nog wat zonder de
+% broncode te lezen, in tegenstelling tot deze handleiding... Ook zouden we er
+% waarschijnlijk met \cite naar moeten verwijzen in plaats van met een voetnoot,
+% maar dat is iets voor een latere sectie.
+
+% In ieder geval, hier komt nu wat Engelse tekst, dus laten we maar naar Engels
+% overschakelen om te zorgen dat de woordafbreking etc. nog blijft kloppen:
+\selectlanguage{english}
+
+% Enkele aanhalingstekens gaan in LaTex met ` en ', waarbij je ` gebruikt voor
+% het begin van de quote en ' voor het eind: `zo dus'. Voor dubbele
+% aanhalingstekens gebruik je `` en ''. Het teken " lijkt wel te werken voor
+% sluitende aanhalingstekens, maar volgens sectie 2.4.1 van lshort moet je dat
+% teken gewoon niet gebruiken.
+
+``\TeX{} is a computer program created by Donald E. Knuth. It is aimed at
+typesetting text and mathematical formulae.'' \\
+``\LaTeX{} enables authors to typeset and print their work at the highest
+typographical quality, using a predefined, professional layout.''
+
+% Hierboven is \\ gebruikt om regels af te breken zonder een nieuwe alinea te
+% starten. Dat heb je waarschijnlijk niet vaak nodig in lopende tekst -- of
+% gebruik je vaak shift-Enter in Word? dat heeft ongeveer hetzelfde effect. Als
+% je dingen op een specifieke manier weer wilt geven is \\ handig, maar het is
+% wel een beetje een paardenmiddel, dus misschien zijn "\begin{quote}" en
+% "\end{quote}" beter hierboven.
+
+
+% Okay, er komt een niet-genummerde opsomming aan. Dit wordt gedaan door te
+% beginnen met "\begin{itemize}", te eindigen met "\end{itemize}" en elk puntje
+% met "\item" aan te geven. Het inspringen is niet nodig.
+
+% Het opsommingsteken wordt bepaald door het commando "\labelitemi". Als je dat
+% commando dus herdefinieert, dan krijg je een ander opsommingsteken. In dit
+% geval geven we de voordelen aan met plustekens en de nadelen met mintekens.
+
+% Zo'n herdefinitie geldt standaard alleen in de huidige scope. In dit geval dus
+% alleen binnen deze opsomming. Als je overal je favoriete opsommingsteken wilt
+% gebruiken, dan kun je de herdefinitie in de preamble opnemen. Als je juist
+% maar een enkele van de opsommingstekens aan wilt passen, dan kun je het
+% gewenste opsommingsteken in vierkante haken opnemen na \item.
+
+\begin{itemize}
+	\renewcommand{\labelitemi}{\(+\)}
+	\item Professionally crafted layouts are available, which make a document
+	really look as if `printed'.
+	\item The typesetting of mathematical formulae is supported in a convenient
+	way.
+	\item Users only need to learn a few easy-to-understand commands that
+	specify the logical structure of a document. They almost never need to
+	tinker with the actual layout of the document.
+	\item Even complex structures such as footnotes, references, tables of
+	contents and bibliographies can be generated easily.
+	\item \LaTeX{} encourages authors to write well-structured texts, because
+	this is how \LaTeX{}  works --- by specifying structure.
+\end{itemize}
+
+\subsection{Disadvantages}
+\begin{itemize}
+	\renewcommand{\labelitemi}{\(-\)}
+	\item \LaTeX{} does not work well for people who have sold their souls...
+	\item Although some parameters can be adjusted within a predefined document
+	layout, the design of a whole new layout is difficult and takes a lot of
+	time.
+	\item Not WYSIWYG.
+	\item[--] \LaTeX{} has a steep learning curve, as you are about to find out.
+\end{itemize}
+
+% En weer terug naar Nederlands
+\selectlanguage{dutch}
+
+\section{Nieuw document}
+
+Hoe zet je een nieuw document op? Dit hoeft niet in een \LaTeX-editor of met een
+standaard beginbestand. Het kan gewoon in een teksteditor en je hebt de
+onderstaande commando's nodig.
+
+% Dit maal gebruiken we een genummerde opsomming. Dit gaat met "enumerate" in
+% plaats van "itemize". Omdat we het pakket "enumerate" geladen hebben kunnen we
+% de stijl van de opsommingstekens makkelijk wijzigen, wat we hieronder doen
+% voor de opsomming van packages.
+
+\begin{enumerate}
+	\item Open \emph{kile}, \emph{Texmaker} of \emph{TeXWorks} en start een leeg
+	document.
+	% Om het even elke andere editor voor platte tekst werkt ook.
+
+	\item Zet bovenaan \verb.\documentclass{article}. Dit commando geeft aan wat
+	voor soort tekst je gaat schrijven, in dit geval dus article. Daarnaast
+	bepaalt het ook de lettergrootte.
+	% Met \documentclass[12pt]{article} krijg je bijvoorbeeld grotere letters.
+
+	\item Direct daaronder zet je de packages die je wilt gebruiken. Deze maken
+	het mogelijk om een aantal extra functies toe te voegen aan \LaTeX{} die er
+	niet standaard in zitten. Voeg een package toe aan je document door het
+	commando \verb|\usepackage{packagenaam}|.
+
+	Een aantal standaardpakketten zijn:
+	\begin{enumerate}[1)] % Een opsomming in de trend 1) 2) 3).
+		\item \emph{amsmath}, uitbreidingsmogelijkheden bij wiskundige formules;
+		\item \emph{babel}, bepaalt de taal van je document en zorgt er zo voor
+		dat woorden correct worden afgebroken en bijvoorbeeld `Hoofdstuk' i.p.v.
+		`Chapter' wordt gebruikt;
+		\item \emph{amssymb}, deze zorgt ervoor dat je symbolen als
+		\(\mathbb{R}\) kunt gebruiken;
+		\item \emph{graphicx}, voor afbeeldingen;
+		\item \emph{parskip}, deze maakt een nieuwe alinea mooier.
+		% Dit ligt er natuurlijk aan wat je mooier vindt...
+	\end{enumerate}
+
+	\item Als laatste zet je \verb.\begin{document}. en \verb.\end{document}.
+	neer. Tussen deze commando's zet je de tekst.
+
+	\item Compileer het document met `quick build'.
+	% Dit werkt natuurlijk niet in elke teksteditor. Als je teksteditor dit niet
+	% heeft, gebruik dan pdflatex of latex op de commandline.
+\end{enumerate}
+
+\section{Tekst}
+Net zoals met Microsoft Word heb je in \LaTeX{} ook de mogelijkheid tekst in
+verschillende vormen te presenteren. Je kunt tekst \textbf{dik},
+\textit{cursief} drukken of in \textcolor{red}{kleur}. Je kunt ervoor kiezen
+tekst \small klein of \large groot, \Large Groter, \huge Nog Groter, \Huge
+Grootst te maken. Zorg wel weer voor \normalsize normalsize, anders blijf je
+groot schrijven. Tevens is het lettertype aan te passen.
+
+% De grootte wordt alleen veranderd in de huidige scope. Het kan dus ook zo:
+% {\Huge heel groot}, normaal, {\scriptsize erg klein}.
+
+Meestal is het voldoende om alleen \verb|\emph| te gebruiken. Hiermee geef je
+\emph{nadruk} aan. Dit commando houdt er ook rekening met de omringende tekst.
+\textit{Binnen deze cursieve tekst krijg je bijvoorbeeld op een \emph{andere
+manier} nadruk, dan je zojuist kreeg in de niet-cursieve tekst.}
+
+
+\section{Math-mode}
+
+% Tijd voor wiskunde!
+
+Behalve tekst typen, kun je met \LaTeX{} natuurlijk heel erg goed wiskundige
+formules typen. Hierbij spelen de tekens \verb|_| (voor subscript) en \verb|^|
+(voor superscript) een belangrijke rol. We kunnen bijvoorbeeld de rij
+\(a_1,a_2,\ldots\) opschrijven, of deze rekenregel: \(a^b\cdot a^c = a^{b+c}\).
+Breuken kunnen we als volgt typen: \(\frac{\text{teller}}{\text{noemer}}\). Je
+kunt eventueel enige \emph{whitespace} verkrijgen door gebruik van de tilde
+\verb|~|.
+
+% We introduceren in de volgende alinea enkele environments voor wiskunde,
+% namelijk "math", "displaymath" en "equation". Deze werken zoals alle
+% environments met \begin en \end. Dat wil zeggen, je schrijft \begin{math},
+% \end{math}, \begin{displaymath}, \end{displaymath}, \begin{equation} en
+% \end{equation}. Voor de eerste twee paren zijn er verkorte notatie, namelijk
+% \(...\) en \[...\]. Er zijn ook nog $...$ en $$...$$, aan $$...$$ 
+% schijnen nadelen te kleven.
+
+Er zijn verschillende manieren (`environments') waarin je wiskundige formules
+kunt typen. Drie van deze environments zijn \emph{math}, \emph{displaymath} en
+\emph{equation}. Met de eerste kun je wiskundige symbolen in een regel
+gebruiken\footnote{Om bepaalde redenen werkt dit soms niet in koppen. Je zult
+het package \textit{fixltx2e} moeten toevoegen om het te laten werken},
+bijvoorbeeld \(a^n+b^n=c^n\). \emph{Displaymath} kun je gebruiken om je
+vergelijking gecentreerd op zijn eigen regel te krijgen:
+\[
+	\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi
+		= -i\hbar \frac{\partial\Psi}{\partial t}
+\]
+Als je de \emph{equation}-environment gebruikt, dan krijg je een nummer en kun
+je ernaar verwijzen: zie (\ref{eq:integraal}):
+\begin{equation}
+	\int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} = \frac{\pi}{e}
+	\label{eq:integraal}
+\end{equation}
+
+Je kunt alle tekens en symbolen perfect op het internet opzoeken. De meeste zijn
+vrij vanzelfsprekend. Kijk hierbij ook eens naar
+Detexify\footnote{\url{http://detexify.kirelabs.org/}}, een online
+symboolherkenner.
+
+Bij het oplossen van een vergelijking is het vaak handig de $=$-tekens mooi
+onder elkaar te schikken:
+\begin{align*}
+	\sin x	& = \cos x \\
+	\sin x	& = \sin(x + \tfrac{1}{2}\pi) \\
+	2x		& = \tfrac{1}{2}\pi + 2\pi k, \hspace{2em} k \in \mathbb{Z} \\
+	x		& = \tfrac{1}{4}\pi + \pi k
+\end{align*}
+Dit gaat met weer een andere environment.
+
+% Overweeg een macro, bijvoorbeeld \ZZ, te definieren voor \mathbb{Z}, zodat je
+% niet de hele tijd \mathbb{Z} hoeft te typen. Zie de sectie over macro's.
+
+\section{Array's}
+
+Voor het maken van een matrix gebruik je array's:
+\[
+	\left(\begin{array}{ccc}
+		a^2 + b^2  &  \tfrac{d}{c}  &  k \\
+		f          &  g + h + i     &  l
+	\end{array}\right)
+\]
+Je kunt een matrix ook tussen de tekst zetten
+\(\left(\begin{array}{cc}
+	a^2 + b^2  &  \tfrac{d}{c} \\
+	f          &  g + h + i
+\end{array}\right)\)
+door de \emph{math}-environment te gebruiken in plaats van de
+\emph{displaymath}-environment.
+
+
+\section{Macro's}
+Het kan soms erg vervelend zijn voortdurend \verb.\mathbb{N}. te moeten typen
+als je iets alledaags als de natuurlijke getallen bedoeld. Je kunt echter gewoon
+je eigen commando defini\"eren en voortaan \verb.\N. typen. De benodigde code
+kun je in de broncode van deze handleiding vinden. Dit lost echter nog niet alle
+problemen op. Als je bijvoorbeeld het commando \verb|\pyth{a}{b}{c}| wilt
+defini\"eren voor \(a^2 + b^2 = c^2\) zul je iets anders moeten doen. Ook de
+code daarvoor vind je in de broncode.
+% De code staat in de preamble, onder het toevoegen van de packages.
+
+
+\section{Zelf op onderzoek uit}
+Natuurlijk is het niet mogelijk om alle \TeX-symbolen en commando's die jullie
+zullen gebruiken binnen deze cursus aan jullie voor te schotelen. Daarom is het
+belangrijk dat je zelf dingen op kunt zoeken. In het helpmenu van je editor,
+maar bijvoorbeeld ook op internet kun je een hoop vinden.
+
+\section{Afbeeldingen invoegen}
+
+In \LaTeX{} heb je uitgebreide mogelijkheden om afbeeldingen in te voegen en aan
+te passen.
+
+\subsection{Het plaatsen van een afbeelding}
+
+Allereerst moet je de volgende \emph{usepackage} toevoegen om afbeeldingen te
+implementeren:
+\begin{verbatim}
+    \usepackage{graphicx}
+\end{verbatim}
+Om een afbeelding vervolgens in te voeren gebruik je het volgende commando:
+\begin{verbatim}
+    \includegraphics{naam afbeelding}
+\end{verbatim}
+Je afbeelding moet een \verb|.png|- of \verb|.jpg|-bestand zijn.
+Is je afbeelding te groot, dan kan je het formaat aanpassen.
+\begin{verbatim}
+    \includegraphics[scale=...]{naam afbeelding}
+\end{verbatim}
+In plaats van \verb|scale=...| kun je ook \verb|width=...| gebruiken,
+bijvoorbeeld \verb|width=0.8\textwidth|.
+
+\subsection{Sleutelen aan afbeeldingen}
+
+Afbeeldingen worden vaak in een \emph{figure}-environment opgenomen. Een
+\emph{figure}-environment is een zogenaamde \emph{float}. Dat wil zeggen dat
+\LaTeX{} zelf bepaalt waar het plaatje geplaatst wordt. Je kunt hier natuurlijk
+wel invloed op uitoefenen. De letters \verb|ht| in \verb+\begin{figure}[ht]+
+geven bijvoorbeeld het volgende aan:
+\begin{itemize}
+	\item \verb+h+ betekent \emph{here}; het plaatje komt ongeveer op deze plek
+terecht. Helaas zet \LaTeX{} het plaatje niet exact op de plek neer waar je de
+code voor hebt staan.
+	\item \verb+t+ betekent \emph{top}; het plaatje komt aan de bovenkant van
+	een pagina staan.
+	\item \verb+ht+ betekent dus dat \LaTeX{} eerst probeert om het plaatje op
+	de plek van de code neer te zetten, en als dat niet lukt boven aan de
+	pagina.
+\end{itemize}
+Als je echt niet tevreden bent over de automatische plaatsing kan je \verb+[H]+
+gebruiken om het plaatje echt neer te zetten op de plek in de code waar je hem
+hebt geplaatst. Hiervoor heb je wel \verb&\usepackage{float}& nodig. Met
+\verb.\vspace{2cm}. en \verb.\hspace{2cm}. kan je een plaatje handmatig
+verschuiven.
+
+\subsection{Zelf afbeeldingen maken in \LaTeX}
+Helaas hebben we nu geen tijd om dit verder uit te leggen. Kijk bijvoorbeeld
+zelf eens naar het pakket \emph{TikZ}.
+
+% Misschien kun het logo van De Leidsche Flesch in TikZ maken, en dat in de
+% volgende versie van deze handleiding laten opnemen!
+
+
+\section{Code}
+
+\subsection{Code invoegen}
+
+Het invoegen van code gebeurt met het package \textit{listings}. Dit geeft een
+environment \emph{lstlisting}. Je zet je code dan dus tussen
+\verb+\begin{lstlisting}+ en \verb+\end{lstlisting}+. Wel moet je specificeren
+welke programmeertaal je gebruikt; als je bijv. C++ gebruikt zet je
+\verb|\lstset{language=C++}| \emph{boven} \verb+\begin{document}+.
+
+De \LaTeX-code
+\begin{verbatim}
+\begin{lstlisting}
+  int main (int argc, char** argv) {
+    std::cout << "Hello world" << std::endl;
+    return 0;
+  }
+\end{lstlisting}
+\end{verbatim}
+heeft bijvoorbeeld
+\begin{lstlisting}
+  int main (int argc, char** argv) {
+    std::cout << "Hello world" << std::endl;
+    return 0;
+  }
+\end{lstlisting}
+als output.
+
+Tevens kun je simpelweg het bestand zelf invoegen door
+\begin{verbatim}
+\lstinputlisting{bestandnaam.extensie}
+\end{verbatim}
+te gebruiken.
+
+\subsection{Code opmaken}
+
+Het hierboven al kort genoemde commando \verb+\lstset{...}+ biedt nog veel meer
+mogelijkheden. Kijk hiervoor eens in het \LaTeX-Wikibook.
+
+\section{Referenties}
+Bij eigenlijke alle genummerde dingen kun het commando
+\verb+\label{HierEenNaam}+ gebruiken. De precieze locatie voor deze code is wat
+lastig; \verb|\label{...}| onthoudt namelijk simpelweg het laatstgegenereerde
+nummer in de huidige scope. Als je \verb|\label{...}| eenmaal op de juiste
+plaats gezet hebt, kun je het nummer gebruiken met \verb+\ref{HierEenNaam}+.
+Ook kun je met \verb+\pageref{HierEenNaam}+ verwijzen naar de pagina waar de
+label staat.
+
+Voor een voetnoot in je tekst gebruik je
+\verb+\footnote{Dit is een voetnoot}+\footnote{Dit is een voetnoot}.
+
+Voor uitgebreide referenties gebruik je
+\begin{verbatim}
+\begin{thebibliography}{99}
+    \bibitem{afbeeldingen} Wikibooks, \emph{LaTeX/Floats, Figures and Captions
+        --- Wikibooks{,} The Free Textbook Project}.
+        \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
+\end{thebibliography}
+\end{verbatim}
+Vervolgens kan je met \verb.\cite{afbeeldingen}. naar bijvoorbeeld de url met
+meer info over afbeeldingen verwijzen\cite{afbeeldingen}.
+
+\textbf{Voor verwijzingen is het belangrijk om de code 2x te compileren. Anders
+komen er vraagtekens of verouderde nummering te staan.}
+
+\begin{thebibliography}{99}
+	\bibitem{wikibook}
+		\url{http://en.wikibooks.org/wiki/LaTeX}
+	\bibitem{afbeeldingen} Wikibooks, \emph{LaTeX/Floats, Figures and Captions
+		--- Wikibooks{,} The Free Textbook Project}.
+		\url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
+\end{thebibliography}
+
+\end{document}
