@@ -61,22 +61,22 @@ en het dus belangrijk is om dit op te kunnen lossen. Onthoud verder ook dat er
 meestal meerdere manieren zijn om iets weer te geven, met telkens net een iets
 andere lay-out. Het is vaak een kwestie van wat je fijner vindt.
 
-Mocht het maken van documenten in \LaTeX je moeilijk afgaan, probeer dan gebruik te maken van online hulpmiddelen. De wikibook over \LaTeX, te vinden op \url{https://en.wikibooks.org/wiki/LaTeX}, is een zeer toegankelijk hulpmiddel waar de meest voorkomende situaties uitgebreid in beschreven staan. Mocht je het commando van een bepaald symbool niet kunnen vinden, probeer dan \url{http://detexify.kirelabs.org}, waar je het symbool dat je zoek kan tekenen, en het bijbehorende commando dan voor je gevonden wordt.
+Mocht het maken van documenten in \LaTeX  \ je moeilijk afgaan, probeer dan gebruik te maken van online hulpmiddelen. De wikibook over \LaTeX, te vinden op \url{https://en.wikibooks.org/wiki/LaTeX}, is een zeer toegankelijk hulpmiddel waar de meest voorkomende situaties uitgebreid in beschreven staan. Mocht je het commando van een bepaald symbool niet kunnen vinden, probeer dan \url{http://detexify.kirelabs.org}, waar je het symbool dat je zoek kan tekenen, en het bijbehorende commando dan voor je gevonden wordt.
 
 \subsection{Beginnen}
 
 Om te beginnen met de workshop volg je de volgende stappen:
 \begin{enumerate}
 \item Start je computer op en log in.
-\item Klik op het startmenu $\rightarrow$ all programs $\rightarrow$ MiKTeX 2.9 $\rightarrow$ TeXworks \footnote{Je kunt thuis ook het programma MiKTeX downloaden via \url{http://miktex.org/download}, dit is een makkelijk programma op LaTeX code in de maken en configureren}
+\item Klik op het startmenu $\rightarrow$ all programs $\rightarrow$ TeXworks \footnote{Je kunt thuis ook het programma MiKTeX downloaden via \url{http://miktex.org/download}, dit is een makkelijk programma op LaTeX code in de maken en configureren}
 \item Lees deze handleiding door. De handleiding en opgavenbundel zijn (ook) te vinden op de  website\footnote{\url{http://www.deleidscheflesch.nl/p/latex-workshop}\newline Ook na de workshop blijven deze bestanden online staan.}. 
 \item Pak de opgavenbundel erbij.
 \item Je kunt nu de opgaven gaan maken. Voor inspiratie kun je de handleiding grondig doorlezen en het internet afstruinen.
 \end{enumerate}
-Nu al een paar jaar bestaat er ook een online TeX-verwerker, Sharelatex\footnote{\url{https://www.sharelatex.com}}, waar \emph{in the cloud} kan \LaTeX-en. Het werkt in principe zoals Google Docs, aangezien je op elke computer er bij kan en alle bestanden die je maakt ook online opgeslagen worden. Zo kan je ook nooit je huiswerk meer vergeten.
+Nu al een paar jaar bestaat er ook een online TeX-verwerker, Sharelatex\footnote{\url{https://www.sharelatex.com}}, waar \emph{in the cloud} kan \LaTeX-en. Het werkt in principe zoals Google Docs, aangezien je op elke computer er bij kan en alle bestanden die je maakt ook online opgeslagen worden. Zo kan je ook nooit je huiswerk meer vergeten. Een andere handige online versie van \LaTeX \ waarin je met meedere mensen tegelijk kan werken is Overleaf\footnote{\url{https://www.overleaf.com/}}.
 \section{Nieuw document}
 
-Een \LaTeX\ document bestaat uit twee delen. Het eerste deel is de preamble. De dingen die je hier neerzet gelden voor het hele document, hier kun je bijvoorbeeld de juiste pakketten laden en het lettertype instellen. Het tweede deel begint bij \verb.\begin{document}. en eindigt bij 
+Een \LaTeX document bestaat uit twee delen. Het eerste deel is de preamble. De dingen die je hier neerzet gelden voor het hele document, hier kun je bijvoorbeeld de juiste pakketten laden en het lettertype instellen. Het tweede deel begint bij \verb.\begin{document}. en eindigt bij 
 \verb.\end{document}. Hier tussenin staat de inhoud van het document. 
 
 Je kunt ook commentaar in je .tex bestand zetten, zonder dat dit wordt weergeven in je PDF. Doe dit door \verb.%. voor je regel met commentaar te zetten.
@@ -156,17 +156,16 @@ Een genummerde opmaak, zoals eerdere opsommingen in deze handleiding, kun je mak
 \item voorbeeld 2
 \end{enumerate}
 
-Wil je een andere opmaak of letters die oplopen dan type je \verb|\begin{enumerate}[a.]|. Dan krijg je dit:
-
-\begin{enumerate}[a]
-\item voorbeeld 1
-\item voorbeeld 2
-\end{enumerate}
-Op dezelfde manier kan je ook een opsomming met i'tjes maken door \verb|\begin{enumerate}[i.]|
-\begin{enumerate}[i.]
-\item voorbeeld 1
-\item voorbeeld 2
-\end{enumerate}
+Wil je een andere opmaak of letters die oplopen dan type je \verb|\begin{description}| en vervolgens \verb.\item[a]., \verb.\item[b]., enz. dan krijg je dit:
+\begin{description}
+\item[a] voorbeeld 1 
+\item[b] voorbeeld 2 
+\end{description}
+Op dezelfde manier kan je ook een opsomming met i'tjes maken door \verb|\begin{description}| en vervolgens \verb.\item[i]., \verb.\item[ii]., enz. te doen.
+\begin{description}
+\item[i.] voorbeeld 1
+\item[ii.] voorbeeld 2
+\end{description}
 
 \section{Tekst}
 Net zoals met Microsoft Word heb je in \LaTeX{} ook de mogelijkheid tekst in
@@ -509,6 +508,39 @@ meer info over afbeeldingen verwijzen\cite{afbeeldingen}.
 
 \textbf{Voor verwijzingen is het belangrijk om de code 2x te compileren. Anders
 komen er vraagtekens of verouderde nummering te staan.}
+
+Voor een volledige referentielijst is het eigenlijk het handigst om BibTex te gebruiken. Hiervoor moet je een nieuwe document aanmaken die je naam.bib noemt. \textbf{Het is belangrijk dat je dit bestand in dezelfde map opslaat als je texfile.}
+
+Een voorbeeld van wat je in zo'n bestand zet is:
+\begin{verbatim}
+ @article {Crowdy2016,
+    AUTHOR = {Crowdy, D. G. and Kropf, E. H. and Green, C. C. and Nasser, M.
+              M. S.},
+     TITLE = {The {S}chottky-{K}lein prime function: a theoretical and
+              computational tool for applications},
+   JOURNAL = {IMA J. Appl. Math.},
+  FJOURNAL = {IMA Journal of Applied Mathematics},
+    VOLUME = {81},
+      YEAR = {2016},
+    NUMBER = {3},
+     PAGES = {589--628},
+      ISSN = {0272-4960},
+   MRCLASS = {30D30 (30-02 30D10 31A15 33E20)},
+  MRNUMBER = {3564667},
+       DOI = {10.1093/imamat/hxw028},
+       URL = {http://dx.doi.org/10.1093/imamat/hxw028},
+}
+\end{verbatim} 
+
+Veel BibTeX code van wiskundige artikelen kan je bijvoorbeeld vinden op: \url{http://www.ams.org/mathscinet/}. Hier kan je wel alleen via het universiteitsnetwerk bij komen. Het is handig om een handige naam te kiezen voor je citaat (in ons voorbeeld Crowdy2016, dus auteur en uitgeefjaar), omdat dit bij het citeren makkelijker te onthouden is voor jezelf.  
+
+Vervolgens moet je op de plek in je texfile waar je de referentielijst wil hebben het volgende zetten: 
+\begin{verbatim}
+\bibliographystyle{plain}
+\bibliography{naam}
+\end{verbatim}
+  
+Als je dit erin hebt staan, kun je gaan citeren. Dit doe je door achter de quote of parafrase \verb. \cite{naamcitaat}. te zetten (in ons geval dus \verb. \cite{Crowdy2016}. Om de referentie goed in je pdf te krijgen moet je het bestand 4  keer compliren in de volgorde: \LaTeX $\rightarrow$ BibTex $\rightarrow$ \LaTeX $\rightarrow$ \LaTeX. Als je dit niet doet kunnen er vraagtekens of verkeerde citeringen ontstaan. 
 
 \section{Overige interessante packages}
 Verder zijn er nog allerlei verschillende packages om je leven makkelijker te maken. Zoek ze eens op op internet!

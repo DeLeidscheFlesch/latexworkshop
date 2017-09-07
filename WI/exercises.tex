@@ -21,29 +21,29 @@
 % Hier begint het echte document.
 \begin{document}
 
-\title{\LaTeX-workshop (Opgaven)}
+\title{\LaTeX workshop (Exercises)}
 \author{De Leidsche Flesch}
 \date{\today}
 
 \maketitle
 
-\section{Nieuw document}
+\section{New document}
 	\begin{enumerate}
-		\item Begin een \LaTeX-document met de tekst \emph{Hello world!}
+		\item Start a \LaTeX document with the text: \emph{Hello world!}
 	\end{enumerate}
 	
-\section{Tekst}
+\section{Text}
 	\begin{enumerate}
-		\item Zoek op internet een korte uitleg op van de definitie van Latex (\'e\'en zin), en citeer deze zin. Gebruik hiervoor een \verb+\footnote{}+ om te verwijzen naar je bron, en eventueel een \verb+\url{}+ (hierbij moet je het pakket `url' includen).
-		\item Zoek op (op internet) hoe je accenten kunt maken, zoals co\"ordinaat, caf\'e, cura\c{c}ao\"enaar, etc. Kijk ook naar het verschil tussen 'tekst' en `tekst' (let op de accentjes)
-		\item Sommige karakters, zoals \{ hebben al een betekenis binnen \LaTeX. Hoe denk je dat je deze karakters in een tekst zou kunnen weergeven in de PDF. Tip: hoe zien de commando's er standaard uit?
-		\item Probeer de verschillende opsommingen en dingen die uitgelegd staan in de handleiding eens zelf en probeer bijvoorbeeld een nieuwe soort opsomming te maken.
+		\item On the internet, find a short explanation of the definition of Latex (a sentence), and cite this sentence. Use a \verb+\footnote{}+ to make a reference to your source, and if necessary a \verb+\url{}+ (don't forget to include the `url' package).
+		\item Look up (on the internet) how to make accents, such as co\"ordinate, caf\'e (Dutch word), cura\c{c}ao\"enaar (Dutch word for inhabitant of Cura\c{c}ao), etc. Also, look at the difference between 'text' and `text' (pay attention to the accents).
+		\item Some characters, such as \{ are already defined within \LaTeX. How do you think you can portray these characters in a text in the PDF? Hint: take a look at the standard form of the commands.
+		\item Try to produce the different list structures (enumerations, etc.) and all things explained in the manual yourself and try to, for example, make a new custom list structure.
 	\end{enumerate}
 
 
-\section{Wiskunde omgeving}
+\section{Mathematical environment}
 \begin{enumerate}
-	\item Reproduceer de volgende formules, let op de accolades!
+	\item Reproduce the following formulas, mind the braces!
 	\begin{itemize}
 		\renewcommand{\labelitemi}{\(\circ\)}
 			\item\(a_{1,1} + a_{1,2} + \ldots + a_{1,n} = \sum_{i = 1}^n a_{1,i}\)\\
@@ -53,21 +53,21 @@
 		\end{itemize}
 		
 \end{enumerate}
-\section{Zelf op onderzoek uit}
+\section{Do your own research}
 \begin{enumerate}
-	\item Probeer zelf de verschillende dingen uit die uitgelegd staan in de handleiding.
-	\item Reproduceer de volgende formules:
+	\item Try the different examples explained in the manual yourself.
+	\item Reproduce the following formulas:
 	\begin{enumerate}
 		\item \[  \{(a,b) \in \mathbb{Z}^2 : b \neq 0\} \ni (0,1) \]
 		\item \[\overrightarrow{AB_{\pm}} = \langle a, \pm b \rangle \neq a\mathbf{i} \mp b\mathbf{j}\]
-		\item \euro 42,- (hiervoor heb je een pakket nodig)
-		\item Let op de spatie tussen \textquotesingle\(\exists\)\textquotesingle \ en \textquotesingle\(\eta\)\textquotesingle! Hint: gebruik \verb|\stackrel{...}{...}| en \verb.\mathcal.
+		\item \euro 42,- (you need a package for this)
+		\item Pay attention to the space between \textquotesingle\(\exists\)\textquotesingle \ and \textquotesingle\(\eta\)\textquotesingle! Hint: use \verb|\stackrel{...}{...}| and \verb.\mathcal.
 			\[\exists \ \eta :\mathcal{A} \hookrightarrow \mathcal{B}, \zeta : \mathcal{B} \hookrightarrow \mathcal{A}\]
 			\[\Updownarrow\]
 			\[\exists \ \beta : \mathcal{A} \stackrel{\sim}{\longrightarrow} \mathcal{B}\]
 		\item \verb+\underbrace+
-			\[\forall \ A, B \in V :  \underbrace{\neg(A \wedge B)}_{\text{niet } A \text{ en } B} \Longleftrightarrow \underbrace{(\neg A) \vee (\neg B)}_{\text{niet } A \text{ of niet } B}\]
-		\item 			\[f : A \cup B \to \{0,1\} \text{ met } A \cap B = \emptyset \text{ gedefinieerd door } x \mapsto \begin{cases} 0 & \text{ als } x \in A\\1 & \text{ als } x \in B \end{cases}\]
+			\[\forall \ A, B \in V :  \underbrace{\neg(A \wedge B)}_{\text{not } A \text{ and } B} \Longleftrightarrow \underbrace{(\neg A) \vee (\neg B)}_{\text{not } A \text{ nor } B}\]
+		\item 			\[f : A \cup B \to \{0,1\} \text{ with } A \cap B = \emptyset \text{ defined by } x \mapsto \begin{cases} 0 & \text{ if } x \in A\\1 & \text{ if } x \in B \end{cases}\]
 		\item 
 			\[\binom{k}{n} = \prod_{l = 1}^n\frac{k-l+1}{l}\]
 		\item	
