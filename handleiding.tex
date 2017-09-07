@@ -81,17 +81,18 @@
 \usepackage{listings}
 \lstset{language=C++}
 
-\usepackage{listings} % Voor programmeercode
-\lstset{language=C++}
+% Klikbare inhoudsopgaven zijn cool
+\usepackage[hidelinks]{hyperref}
+
 
 
 %%%%% EIGEN COMMANDO'S DEFINIEREN %%%%%
 
-\newcommand{\beqn}{\begin{eqnarray*}} % Zie opgave 6
-\newcommand{\eeqn}{\end{eqnarray*}} % Zie opgave 6
+\newcommand{\beqn}{\begin{align*}} % Zie opgave 6
+\newcommand{\eeqn}{\end{align*}} % Zie opgave 6
 
 \newcommand{\N}{\mathbb{N}} % Zie opgave 6
-\newcommand{\pyth}[3]{#1^2 + #2^2 = #3^2} % Zie opgave 6
+\newcommand{\pyth}[4][2]{#2^{#1} + #3^{#1} = #4^{#1}} % Zie opgave 6
 
 
 
@@ -105,7 +106,8 @@
 \author{De Leidsche Flesch}
 \date{\today}	% Voeg automatisch de datum in
 
-
+% Begin met hoofdstuk 0 de inleiding, om nummering gelijk te houden met de opgaven
+\setcounter{section}{-1}
 
 %%%%% HET 'ECHTE' DOCUMENT %%%%%
 \begin{document}
@@ -156,7 +158,7 @@ andere lay-out. Het is vaak een kwestie van keuze wat je fijner vindt.
 Om te beginnen met de workshop volg je de volgende stappen:
 \begin{enumerate}
 \item Zorg ervoor dat je computer in Linux (Ubuntu) opgestart is (je ziet dan links aan het scherm een balk met iconen). Draait je computer Windows, start dan de computer opnieuw op en kies in het menu voor de optie Ubuntu.
-\item Start het programma Texmaker op. Hierin kun je straks je opgaven maken.
+\item Start het programma Texmaker op\footnote{Installeer thuis onder ubuntu met \texttt{sudo apt-get install texmaker}. Om daarna nooit meer een package te installeren doe je \texttt{sudo apt-get install texlive-full} (op moment van schrijven ruim 2 GB).}. Hierin kun je straks je opgaven maken.
 \item Lees deze handleiding globaal door (de handleiding en opgavenbundel zijn (ook) te vinden op de website\footnote{\url{http://www.deleidscheflesch.nl/p/latex-workshop}\newline Ook na de workshop blijven deze bestanden online staan.}. 
 \item Pak de opgavenbundel erbij.
 \item Je kunt nu de opgaven gaan maken in Texmaker. Voor inspiratie kun je de handleiding grondig doorlezen, de source code van de handleiding gebruiken en het internet afstruinen.
@@ -252,8 +254,7 @@ onderstaande commando's nodig.
 % voor de opsomming van packages.
 
 \begin{enumerate}
-	\item Open \emph{kile}, \emph{Texmaker} of \emph{TeXWorks} en start een leeg
-	document.
+	\item Open \emph{Texmaker} (een alternatief is \emph{TeXWorks} of een willekeurige teksteditor) en start een leeg document.
 	% Om het even elke andere editor voor platte tekst werkt ook.
 
 	\item Zet bovenaan \verb.\documentclass{article}. Dit commando geeft aan wat
@@ -276,15 +277,15 @@ onderstaande commando's nodig.
 		\(\mathbb{R}\) kunt gebruiken;
 		\item \emph{graphicx}, voor afbeeldingen;
 		\item \emph{parskip}, deze maakt een nieuwe alinea mooier.
+		\item \emph{enumerate}, voor makkelijke genummerde lijsten
 		% Dit ligt er natuurlijk aan wat je mooier vindt...
 	\end{enumerate}
 
 	\item Als laatste zet je \verb.\begin{document}. en \verb.\end{document}.
 	neer. Tussen deze commando's zet je de tekst.
 
-	\item Compileer het document met `quick build'.
-	% Dit werkt natuurlijk niet in elke teksteditor. Als je teksteditor dit niet
-	% heeft, gebruik dan pdflatex of latex op de commandline.
+	\item Compileer het document met `quick build'.\footnote{Of gebruik \texttt{pdflatex} op de commandline}
+
 \end{enumerate}
 
 \section{Tekst}
@@ -392,8 +393,7 @@ code daarvoor vind je in de broncode.
 \section{Zelf op onderzoek uit}
 Natuurlijk is het niet mogelijk om alle \TeX-symbolen en commando's die jullie
 zullen gebruiken binnen deze cursus aan jullie voor te schotelen. Daarom is het
-belangrijk dat je zelf dingen op kunt zoeken. In het helpmenu van je editor,
-maar bijvoorbeeld ook op internet kun je een hoop vinden.
+belangrijk dat je zelf dingen op kunt zoeken. Op internet kun je bijna alles vinden, daarnaast hebben studiegenoten jouw problemen ook gehad en opgelost.
 
 \section{Afbeeldingen invoegen}
 
@@ -411,7 +411,7 @@ Om een afbeelding vervolgens in te voeren gebruik je het volgende commando:
 \begin{verbatim}
     \includegraphics{naam afbeelding}
 \end{verbatim}
-Je afbeelding moet een \verb|.png|- of \verb|.jpg|-bestand zijn.
+Je afbeelding moet een \verb|.png|- of \verb|.jpg|-bestand zijn.\footnote{Ook het vectorformaat \texttt{.eps} en andere \texttt{.pdf}'s werken}
 Is je afbeelding te groot, dan kan je het formaat aanpassen.
 \begin{verbatim}
     \includegraphics[scale=...]{naam afbeelding}
@@ -438,9 +438,9 @@ code voor hebt staan.
 \end{itemize}
 Als je echt niet tevreden bent over de automatische plaatsing kan je \verb+[H]+
 gebruiken om het plaatje echt neer te zetten op de plek in de code waar je hem
-hebt geplaatst. Hiervoor heb je wel \verb&\usepackage{float}& nodig. Met
-\verb.\vspace{2cm}. en \verb.\hspace{2cm}. kan je een plaatje handmatig
-verschuiven.
+hebt geplaatst. Hiervoor heb je wel \verb&\usepackage{float}& nodig. 
+
+Met \verb&\usepackage{placeins}& krijg je toegang tot het commando \verb&\FloatBarrier&, zoals de naam suggereert zorgt dit commando ervoor dat alle floats die in je code ervoor of erna staan, in je document respectievelijk niet erna of ervoor kunnen komen.
 
 \subsection{Zelf afbeeldingen maken in \LaTeX}
 Helaas hebben we nu geen tijd om dit verder uit te leggen. Kijk bijvoorbeeld
@@ -515,6 +515,17 @@ meer info over afbeeldingen verwijzen\cite{afbeeldingen}.
 \textbf{Voor verwijzingen is het belangrijk om de code 2x te compileren. Anders
 komen er vraagtekens of verouderde nummering te staan.}
 
+\section{Overige interessante packages}
+Verder zijn er nog allerlei verschillende packages om je leven makkelijker te maken. Zoek ze eens op op internet!
+\begin{itemize}
+	\item \verb&\usepackage{hyperref}& Referenties binnen je document, url's, en klikbare inhoudsopgaves in de \verb+.pdf+. Kijk ook eens naar de opties van dit package. Inhoudsopgaves maak je trouwens met \verb&\tableofcontents&.
+	\item \verb&\usepackage{beamer}& Om beamer-presentaties te maken (powerpoint).
+	\item \verb&\usepackage{fancyhdr}& Voor intelligente headers en footers op je pagina.
+	\item \texttt{latexmk} Kan het hele compileerproces voor je automatiseren.
+	\item \verb&\usepackage{sidecap}& Voor captions naast je floats in plaats van onder of boven.
+	\item Wist je dat \verb&\\&, het commando voor een regelovergang, een optioneel argument heeft? Probeer bijvoorbeeld eens \verb&\\[5cm]& .
+\end{itemize}
+
 \begin{thebibliography}{99}
 	\bibitem{wikibook}
 		\url{http://en.wikibooks.org/wiki/LaTeX}
@@ -522,5 +533,6 @@ komen er vraagtekens of verouderde nummering te staan.}
 		--- Wikibooks{,} The Free Textbook Project}.
 		\url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
 \end{thebibliography}
+
 
 \end{document}

@@ -15,8 +15,8 @@
 \usepackage[official]{eurosym}
 
 
-\newcommand{\beqn}{\begin{eqnarray*}}
-\newcommand{\eeqn}{\end{eqnarray*}}
+\newcommand{\beqn}{\begin{align*}}
+\newcommand{\eeqn}{\end{align*}}
 
 % Hier begint het echte document.
 \begin{document}
@@ -90,7 +90,7 @@ Kijk ook naar hoe je de uitlijning in tabelcellen kunt veranderen.
 		\begin{flushright}\(\Box\)\end{flushright}
 (Let op: ga goed na in welk environments je moet zitten en op ga na op welke manier je deze moet combineren)
  Hint: doe om je \verb+\Box+ de gebruikelijke \verb+\(+ en \verb+\)+-tekens.
-	\item Zorg dat je het commando \verb+\begin{eqnarray*}+ (en \verb+\end{eqnarray*}+) met \verb+\beqn+ (en \verb+\eeqn+) kunt aanroepen.
+	\item Zorg dat je het commando \verb+\begin{align*}+ (en \verb+\end{align*}+) met \verb+\beqn+ (en \verb+\eeqn+) kunt aanroepen.
 	\item Maak een commando \verb+\modu{a}{b}{c}+ aan dat geeft \(a \equiv b \bmod c\) en een commando \verb.\moda{a}{b}. dat geeft \(\overline{a} = \overline{b}\).
 \end{enumerate}
 
@@ -99,8 +99,8 @@ Kijk ook naar hoe je de uitlijning in tabelcellen kunt veranderen.
 \begin{enumerate}
 	\item Reproduceer de volgende formules:
 	\begin{enumerate}
-		\item \[  \{(a,b) \in \mathbb{Z}^2 : b \neq 0\} \]
-		\item \[\overrightarrow{AB_{\pm}} = \langle a, \pm b \rangle = a\mathbf{i} \pm b\mathbf{j}\]
+		\item \[  \{(a,b) \in \mathbb{Z}^2 : b \neq 0\} \ni (0,1) \]
+		\item \[\overrightarrow{AB_{\pm}} = \langle a, \pm b \rangle \neq a\mathbf{i} \mp b\mathbf{j}\]
 		\item \euro 42,- (hiervoor heb je een pakket nodig)
 		\item Let op de spatie tussen \textquotesingle\(\exists\)\textquotesingle \ en \textquotesingle\(\eta\)\textquotesingle! Hint: gebruik \verb|\stackrel{...}{...}| en \verb.\mathcal.
 			\[\exists \ \eta :\mathcal{A} \hookrightarrow \mathcal{B}, \zeta : \mathcal{B} \hookrightarrow \mathcal{A}\]
@@ -125,5 +125,4 @@ Kijk ook naar hoe je de uitlijning in tabelcellen kunt veranderen.
 			\end{array}\right)\right|_{t = 0}\]
 	\end{enumerate}
 \end{enumerate}
-  
 \end{document} % Hier eindigt het document.
