@@ -51,60 +51,65 @@
 \section{Introduction}
 
 This is the manual for the \LaTeX workshop of De Leidsche Flesch.
-Please read through this manual first. Then you can start working on the corresponding exercises. When working on these exercises, 
-it is intended that you use this manual and the internet to look things up.
+Please read through this manual first. You can then start working on the corresponding exercises. 
+When working on these exercises, you should use both this manual and the internet to look things up.
 
 You will probably stumble upon several errors, because you made a mistake \emph{somewhere in the code}.
-This is the intended design of the workshop, because later, when using \LaTeX\ , you will definitely make more mistakes,
-and therefore it is important that you are able to solve these problems. Furthermore, please remember that there are 
-often several ways to portray things, with a slightly different layout. This is simply a matter of preference.
+This is the intended design of the workshop, because later, when using \LaTeX, you will definitely make more mistakes,
+and therefore it is important that you are able to solve these problems. Furthermore, please remember that there are often several ways to portray things, with a slightly different layout. 
+This is simply a matter of preference.
 
-If you find making \LaTeX documents quite difficult, please utilize the online help. The wikibook about \LaTeX (\url{https://en.wikibooks.org/wiki/LaTeX}) 
-is very approachable and most occuring situations are extensively described in it. If you can not find the command of a certain symbol,
-please try \url{http://detexify.kirelabs.org}. On this website, you can draw the symbol you are looking for, and it will find the corresponding command for you. 
+If you find creating \LaTeX documents quite difficult, please utilize the online help. The wikibook about \LaTeX (\url{https://en.wikibooks.org/wiki/LaTeX}) is very approachable and most recurring situations are extensively described there. 
+Another useful source of help can be found at \url{https://www.sharelatex.com/learn/}, related to the onlin editor ShareLaTeX.
 
-\subsection{Beginning}
+If you can not find the command of a certain symbol, please try \url{http://detexify.kirelabs.org}. 
+On this website, you can draw the symbol you are looking for, and it will find the corresponding command for you
+\footnote{An Android app is also available: \url{https://play.google.com/store/apps/details?id=website.marty.detexify\&hl=en}.}. 
 
-To start with the workshop, you will have to follow the following steps:
+\subsection{Starting}
+
+To start with the workshop, please complete the following steps:
 
 \begin{enumerate}
 \item Start your computer and log in.
-\item Click on the startmenu $\rightarrow$ all programs $\rightarrow$ MiKTeX 2.9 $\rightarrow$ TeXworks \footnote{You can download the MiKTeX program at home at \url{http://miktex.org/download}, this is an easy program for making LaTeX code.}
+\item Click on the startmenu $\rightarrow$ all programs $\rightarrow$ MiKTeX 2.9 $\rightarrow$ TeXworks\footnote{You can download the MiKTeX program at home at \url{http://miktex.org/download}, this is an easy program for making LaTeX code.}
 \item Read this manual. The manual and exercises can (also) be found on our website\footnote{\url{http://www.deleidscheflesch.nl/p/latex-workshop}\newline After the workshop, these files will stay online.}. 
 \item Take your bundle of exercises.
 \item You can now start making the exercises. For inspiration, read the manual carefully and scour the internet.
 \end{enumerate}
-An online TeX editor exists for a few years: Sharelatex\footnote{\url{https://www.sharelatex.com}}, which is for making \LaTeX documents \emph{in the cloud}. It works like Google Docs: it is accessible from every computer and all files you make will be saved online. This way, you can never forget your homework.
+An online TeX editor has existed for a few years: Sharelatex\footnote{\url{https://www.sharelatex.com}}, which is for making \LaTeX documents \emph{in the cloud}. 
+It works like Google Docs: it is accessible from every computer and all files you make will be saved online. 
+This way, you can never forget your homework.
 
 \section{New document}
 
 
-A \LaTeX\ document is made out of 2 parts. The first part is the preamble. The things written here will be valid throughout the whole document, such as the right packages and fonts. The second part starts at \verb.\begin{document}. and ends at 
+A \LaTeX\ document consists of 2 parts. The first part is the preamble. The things written here will be valid throughout the whole document, such as the right packages and fonts. The second part starts at \verb.\begin{document}. and ends at 
 \verb.\end{document}. The contents of your document are inbetween these two commands.
 
-You can put comments in your .tex file, without them being displayed in your PDF. You can accomplish this by using \verb.%. in front of your commentary.
+You can put comments in your .tex file, without them being displayed in your PDF. 
+You can accomplish this by using \verb.%. in front of your commentary.
 
 \subsection{Preamble} 
 
 \begin{enumerate}
 
-	\item At the top, you put \verb.\documentclass{article}. This command tells your compiler
-	what kind of text you are writing, in this case an article. It specifies for example the 
-	font size. The article class is the best in almost every situation. 
+	\item At the top, you put \verb.\documentclass{article}. This command tells your compiler what kind of text you are writing, in this case an article. 
+		It specifies for example the font size. 
+		The article class is the best in almost every situation. 
 	
-	\item Directly below this you put the packeges you want to use. These make it
-	it possible to add extra functies to \LaTeX{} that aren't standard. 
-	Add a package by putting \verb|\usepackage{packagenaam}| at the top of your document.
+	\item Directly below this you put the packages you want to use. 
+		These make it possible to add extra functies to \LaTeX{} that are not standard. 
+	Add a package by putting \verb|\usepackage{packagename}| at the top of your document.
 
 	A couple of commands that are often used in documents are:
 	\begin{enumerate}[1)] 
         \item \verb.\usepackage[a4paper]{geometry}. It specifies the dimensions of your document to the A4 format.
         \item \verb.\usepackage[dutch, english]{babel}. This one is for correct translations and word wrapping.  
-        For example   'Chapter' instead of  'Hoofdstuk'. Here also Dutch is loaded, so you could use Dutch quotes for example.
+        For example 'Chapter' instead of 'Hoofdstuk'. Here also Dutch is loaded, so you could use Dutch quotes for example.
         The last language in the block is the main language of the document. 
         \item \verb.\usepackage{parskip}. For a correct display of paragraphs.
-        \item \verb.\usepackage{amsmath, amssymb}. A package that displays formulas
-         and other mathematical object in a better looking way.
+        \item \verb.\usepackage{amsmath, amssymb}. A package that displays formulas and other mathematical object in a better looking way.
         \item \verb.\usepackage{graphicx}. To add images to your document. 
         \item \verb.\usepackage{enumerate}. To easily make numbered lists. 
         \item \verb.\usepackage{url}. To display urls properly. 
@@ -116,12 +121,12 @@ You can put comments in your .tex file, without them being displayed in your PDF
     
     \item Put the following commands in your peamble: 
 
-        \verb.\title{titel}.\\
-        \verb.\author{auteur}.\\
+        \verb.\title{title}.\\
+        \verb|\author{A. Uthor}|\\
         \verb.\date{\today}., the command \verb.\today. automatically adds the correct date.
 
-	\item the last thing you do is to add  \verb.\begin{document}. and \verb.\end{document}.
-	Between these two commands you put your text.
+	\item The last thing you do is to add  \verb.\begin{document}. and \verb.\end{document}.
+	Between these two commands you put the body of your document.
 
 	\item Compile your document.
 
@@ -130,44 +135,51 @@ You can put comments in your .tex file, without them being displayed in your PDF
 \subsection{Text in a document}
 
 \subsubsection{Title and Author}
-At the top of your document put \verb.\maketitle. This makes sure the information you put in the preamble as the title will be at the right place in the document. In this case a title, author and date.
+At the top of your document body put \verb.\maketitle.. 
+This makes sure the information you put in the preamble as the title will be at the right place in the document. In this case a title, author and date.
 
 \subsubsection{Table of Contents}
-You make a table of contents with the command \verb.\tableofcontents. Then you will want to start a new page using \verb.\newpage. 
+You make a table of contents with the command \verb.\tableofcontents.. Then you will want to start a new page using \verb.\newpage.. 
 
 \subsubsection{Headers}
-An Article document in \LaTeX\ uses sections, subsections, subsubsections and paragraphs. 'New document' in this document is a section for example. You make these by typing \verb.\section{Name header}.
+An Article document in \LaTeX\ uses sections, subsections, subsubsections and paragraphs. 'New document' in this document is a section for example. You make these by typing \verb.\section{Name header}..
 
-The header 'Text in document' is a subsection. You make these by typing \verb.\subsection{Name Header}.
+The header `Text in document' is a subsection. You make these by typing \verb.\subsection{Name Header}..
 
-the header 'Headers' is een subsubsection. You make these by typing \verb.\subsubsection{Name Header}.
+the header `Headers' is een subsubsection. You make these by typing \verb.\subsubsection{Name Header}..
 \paragraph{Paragraph}
-Then you also have paragraph headers, you make these by typing \verb.\paragraph{Naam paragraaf}. This header is a paragraph type.
+Finally there are paragraph headers, you make these by typing \verb.\paragraph{paragraph name}.. This header is a paragraph type.
 
 \subsubsection{Paragraph}
-You can make paragraphs by leaving an empty line between the text.
+You can make paragraphs without a title by leaving an empty line between the text.
 
 \subsubsection{Enumerations and lists}
-You can make a non-numbered enumaration using \verb.\begin{itemize}.. A dot in your enumaration is then made using \verb.\item. Behind this command you type a spacebar and then the tekst you want behind the dot. When your enumaration is done you close it using \verb.\end{itemize}. 
+You can make a non-numbered enumaration using \verb.\begin{itemize}.. 
+An item in your enumaration is then made using \verb.\item.. 
+Behind this command you type a space and then the text you want for this bullet-point. 
+When your enumaration is done you close it using \verb.\end{itemize}.. 
+Any following item can be put on a new line by again starting it with \verb.\item..
 \begin{itemize}
 \item This is the first item of a non-numbered enumaration
 \item This is the second
 \item This is the third
 \end{itemize}
-A numbered enumaration, as seen earlier in this guide, is made using \verb.\begin{enumerate}. You create numbers by again using \verb.\item. te typen. Again you close of with \verb.\end{enumerate}. This will give you:
+A numbered enumaration, as seen earlier in this guide, is made using \verb.\begin{enumerate}.. You create numbered items on you list by again using \verb.\item.. Again you close of with \verb.\end{enumerate}.. This will give you:
 
 \begin{enumerate}
 \item Example 1
 \item Example 2
 \end{enumerate}
 
-If you want a differenf font or lay-out, you type \verb|\begin{enumerate}[a.]|. then you'll get:
+If you want a different item text or lay-out, you type \verb|\begin{enumerate}[a.]|. This will yield:
 
-\begin{enumerate}[a]
+\begin{enumerate}[a.]
 \item Example 1
 \item Example 2
 \end{enumerate}
+
 In the same way you can enumarate using roman numerals using \verb|\begin{enumerate}[i.]|
+
 \begin{enumerate}[i.]
 \item Example 1
 \item Example 2
@@ -190,39 +202,64 @@ Type \verb.\normalsize. after this to continue in the usual textsize.
 
 \section{Math Mode}
 \subsection{Display Equations}
-If you want formula's and equations in your reports then you will have to work in "Math Mode". There are multiple way to enter Math Mode, the 3 most used methods are \textit{math}, \textit{displaymath} and \textit{align}, in which you can type mathematical formula's. In \textit{math} the mathematical symbols will just appear in the same line\footnote{for some reason this does not always work for titles. You will need the package \textit{fixltx2e} to make this work}, like so: $a^n+b^n=c^n$. This environment can be invoked in multiple ways. The most used way is putting \verb|$|-signs around the equations.
+If you want formula's and equations in your reports then you will have to work in "Math Mode". 
+There are multiple way to enter Math Mode, the 3 most used methods are \textit{math}, \textit{displaymath} and \textit{align}, in which you can type mathematical formula's. 
+In \textit{math} the mathematical symbols will just appear inline so on the textline itself\footnote{for some reason this does not always work for titles. You will need the package \textit{fixltx2e} to make this work}, like so: $a^n+b^n=c^n$. 
+This environment can be invoked in multiple ways. 
+The most used way is putting \verb|$|-signs around the equations.
 
 The \textit{displaymath} environment is used to center on the mathematical symbols, like:
-\[ \frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi= -i\hbar \frac{\partial\Psi}{\partial t}.\]
+\[ \frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi= -i\hbar \frac{\partial\Psi}{\partial t}\]
 
-This environment can be invoked by putting the equation between the following brackets: \verb|[|\dots\verb|]|.\\ 
+		This environment can be invoked by putting the equation between the following brackets: \verb.\[.\dots\verb.\]..\\ 
 
-Lastly we have the \textit{align} method, with this environment mathematical symbols will be centered en they will get a reference number behind the equation, like so:
+Lastly we have the \textit{align} method, with this environment mathematical symbols will be aligned and they will get a reference number behind the equation, like so:
 
 \begin{align}
 \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} &= \frac{\pi}{e}\\
 \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} &= \frac{\pi}{e}
 \end{align}
 
-To display an equation like this use \verb|\begin{align}| and \verb|\end{align}|. If you want to use this method without the reference numbers, type \verb|\begin{align*}| and \verb|\end{align*}|. To list multiple equations below eachother, type \verb.\\. behind the equations. Use the \verb|&|-sign to align the formula's correctly, most often you use the \verb|&|-sign before the \verb|=|-sign in the formula. If you are feeling adventurous, try finding out what happens if you use multiple \verb|&|'s in the same line.
+To display an equation like this use \verb|\begin{align}| and \verb|\end{align}|. 
+	If you want to use this method without the reference numbers, type \verb|\begin{align*}| and \verb|\end{align*}|. 
+	To list multiple equations below eachother, type \verb.\\. behind the equations. 
+	Use the \verb|&|-sign to align the formulas correctly, most often you will want to use the \verb|&|-sign before the \verb|=|-sign in the formula. 
+	If you are feeling adventurous, try finding out what happens if you use multiple \verb|&|'s in the same line.
 
 
 \subsection{Superscript and subscript}
-When working in Math Mode, subscript (\verb|_|) and superscript (\verb|^|) are often used. This way we can for instance display $a_1,a_2,\dots, a_{n-1}$ with the following code: \verb|a_1,a_2,\dots,a_{n-1}| and the equation $a^b\cdot a^c=a^{b+c}$ can be constructed by typing \verb|a^b\cdot a^c=a^{b+c}|. Pay attention that if you want to subscript or superscript more than a single symbol you have to put \{ and \} around it.
+When working in Math Mode, subscript (\verb|_|) and superscript (\verb|^|) are often used. 
+This way we can for instance display $a_1,a_2,\dots, a_{n-1}$ with the following code: \verb|a_1, a_2, \dots, a_{n-1}| and the equation $a^b\cdot a^c=a^{b+c}$ can be constructed by typing \verb|a^b \cdot a^c = a^{b + c}|. Pay attention if you want to subscript or superscript more than a single symbol you have to put \{ and \} around it.
 
+\subsection{Brackets}
 
+When putting brackets around larger parts of equations in displaymath, such as fractions, the brackets need to be scaled. 
+This can be done by putting \verb.\left. and \verb.\right. before the brackets that need to be scaled:
+\[\left| -\frac{1}{2} \right| ^3 = \left( \frac{1}{8} \right)\]
+
+Is created by the following code:\\
+\verb.\[\left| -\frac{1}{2} \right| ^3 = \left( \frac{1}{8} \right)\].
+If you want to match an opening bracket with a closing bracket on a different line, use the invisible bracket \verb|\right.| denoted with a period, e.g. the end of a long set definition on a new line:
+\[\left.\text{s.t. } f^2(x) < \frac{\epsilon}{2} \right\} \]
+Is created using the following code:\\
+\verb&\[\left.\text{s.t. } f^2(x) < \frac{\epsilon}{2} \right\} \]&
+(Note the escape of the curly bracket here)
 \subsection{Roots and fractions}
-When using math you will often encounting roots and fractions. For displaying the fraction $\frac{a}{b}$ type the code: \verb|\frac{a}{b}| and for displaying the root $\sqrt{a}$ gebruiken we \verb|\sqrt{a}| and for  $\sqrt[n]{a}$ we use \verb|\sqrt[n]{a}|. 
+When using math you will often encounting roots and fractions. For displaying the fraction $\frac{a}{b}$ type the code \verb|\frac{a}{b}|.
+For displaying the square root $\sqrt{a}$ we use \verb|\sqrt{a}| and for  $\sqrt[n]{a}$ we use \verb|\sqrt[n]{a}|. 
 
-\subsection{Speciale symbols}
-There are a lot of symbols that are used in math. In this paragraph a number of them will be named, but there are more. To quickly find which code belongs to which symbol you can use the website or the app Detexify\footnote{\url{http://detexify.kirelabs.org/}}. Example of symbols are integrals, but also for instance $\alpha$ and $\beta$. Below are the most used symbols of the Greek alfabet:
+\subsection{Special symbols}
+There are a lot of symbols that are used in math. 
+In this paragraph a number of them will be named, but there are more. 
+To quickly find which code belongs to which symbol you can use the website or the app Detexify\footnote{\url{http://detexify.kirelabs.org/}}. 
+Example of symbols are integrals, but also for instance $\alpha$ and $\beta$. Below are the most used symbols of the Greek alfabet:
 
 \begin{center}
 \begin{tabular}{| l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
 & code & & code & & code & & code & & code & & code\\ 
 \hline
-$\alpha$ & \verb|\alpha| & $\beta$ & \verb|\beta| & $\gamma$ & \verb|\gamma| & $\delta$ & \verb|\delta| & $\epsilon$ & \verb|\epsilon| & $\varepsilon$ & \verb|\varepsilon|  \\
+$\alpha$ & \verb|\alpha| & $\beta$ & \verb|\beta| & $\gamma$ & \verb|\gamma| & $\delta$ & \verb|\delta| & $\epsilon$ & \verb|\epsilon| & $\varepsilon$ & \verb|\varepsilon| \\
 \hline
 $\zeta$ & \verb|\zeta| & $\theta$ & \verb|\theta| & $\lambda$ & \verb|\lambda| & $\mu$ & \verb|\mu| & $\xi$ & \verb|\xi| & $\pi$ & \verb|\pi| \\
 \hline
@@ -246,9 +283,7 @@ $\lim$ & \verb|\lim| & $\log$ & \verb|\log| & $\max$ & \verb|\max| & $\min$ & \v
 \hline
 \end{tabular}
 \end{center}
-
-Naast de tekens uit het Griekse alfabet en de standaard functies hebben we ook nog kwantoren. De kwantoren kunnen zich aanpassen naar de omgeving waarin zij zich bevinden. Zo worden zij groter weergeven in \textit{displaymath} dan in \textit{math}. De onderstaande kwantoren worden het meest gebruikt:
-
+In addition symbols for sums, products, integrals etc. can be easily put in math mode. These symbols adapt to the math mode they are in, they are larger in \textit{displaymath} and super- and subscripts align nicely. Below are the most often used examples:
 \begin{center}
 \begin{tabular}{| l | l | l | l | l | l | l | l |}
 \hline
@@ -263,11 +298,13 @@ $\prod$ & \verb|\prod| & $\int$ & \verb|\int| & $\iiint$ & \verb|\iiint| & $\oin
 
 For $\sum$ and $\prod$ and $\lim$ it looks cleaner if in the  \textit{displaymath} environment the upper en lower limits are directly above or below the quantifier. You can use subscript and superscript to achieve this. For example you get:
 \[\sum_{n=0}^{\infty} \frac{1}{n}\]
-by using the next code: \verb|\sum_{n=1}^{\infty} \frac{1}{n}|. You can make dubble integrals look cleaner by using the command \verb|\limits|. This makes sure the limits will stand in the right place. For example compare:
-\[\iint_D \text{ with } \iint\limits_D.\]
-obtained by the code \verb|\[\iint_^D \text{ with } \iint\limits_D\]|. The second one is the correct notation.\\
-If you want to use $\sum$ or $\prod$ in the \textit{math} environment and still want the upper en lower limits directly above or below the quantifier, you can use the command \verb|\displaystyle|. So for example $\displaystyle\sum_{n=0}^{\infty} \frac{1}{n}$ is obtained by the code \verb|\displaystyle\sum_{n=1}^{\infty} \frac{1}{n}|.\\\\
-Finally there are a few symbols that are useful to know. 
+by using the next code: \verb|\sum_{n=1}^{\infty} \frac{1}{n}|. You can make double integrals look cleaner by using the command \verb|\limits|. This makes sure the limits will align properly. For example compare:
+\[\iint_D \text{ with } \iint\limits_D\]
+obtained by the code \verb|\[\iint_D \text{ with } \iint\limits_D\]|. The second one is the correct notation.\\
+If you want to use $\sum$ or $\prod$ in the \textit{math} environment and still want the upper en lower limits directly above or below the quantifier, you can use the command \verb|\displaystyle|. 
+So for example $\displaystyle\sum_{n=0}^{\infty} \frac{1}{n}$ is obtained by the code \verb|\displaystyle\sum_{n=1}^{\infty} \frac{1}{n}|.\\\\
+
+Finally there are a few more symbols that are useful to know. 
 \begin{center}
 \begin{tabular}{| l | l | l | l | l | l | l | l |}
 \hline
@@ -275,6 +312,8 @@ Finally there are a few symbols that are useful to know.
 \hline 
 $\pm$ & \verb|\pm| & $\times$ & \verb|\times|& $\setminus$ & \verb|\setminus| & $\cdot$ & \verb|\cdot| \\
 \hline
+$\mp$ & \verb|\mp| & $\gg$ & \verb|\gg|& $\ll$ & \verb|\ll| & $\top$ & \verb|\top| \\
+\hline 
 $\leq$ & \verb|\leq| & $\in$ & \verb|\in| & $\subset$ & \verb|\subset| & $\subseteq$ & \verb|\subseteq|  \\
 \hline
 $\cong$ & \verb|\cong| & $\geq$ & \verb|\geq| & $\approx$ & \verb|\approx| & $\mid$ & \verb|\mid| \\
@@ -291,7 +330,7 @@ $\Downarrow$ & \verb|\Downarrow| & $\cdots$ & \verb|\cdots| & $\vdots$ & \verb|\
 \hline
 $\forall$ & \verb|\forall| & $\exists$ & \verb|\exists| & $\infty$ & \verb|\infty| & $\nabla$ & \verb|\nabla| \\
 \hline
-$\partial$ & \verb|\partial| & & & & & & \\
+$\partial$ & \verb|\partial| &$\ni$ &\verb|\ni| &$\supseteq$ &\verb|\supseteq| &$\Longrightarrow$ &\verb|\Longrightarrow| \\
 \hline
 \end{tabular}
 \end{center}
@@ -317,36 +356,36 @@ Between straight lines & $\begin{vmatrix} a & b \\ c & d \end{vmatrix}$ & \verb|
 
 \section{Tables}
 There are different ways to create a table in a \LaTeX-file. The most frequently used are the table (\verb|\begin{tabular}[position of the table]{layout of the table}|) and the array \\
-(\verb|\begin{array}[\textit{position of the table}]{layout of the table}|). You can only create an array in a math evironment. \\
-To separate the elements in a row, you use \verb|&| and to close a row you use \verb|\\|. To insert lines between columns, you place  \verb|\hline| in the code the table was created with.\\\\
+(\verb|\begin{array}[position of the table]{layout of the table}|). You can only create an array in a math evironment. \\
+To separate the elements in a row, you use \verb|&| and to close a row you use \verb|\\|. To insert lines between columns, you place  \verb|\hline| in the code the table was created with.\\
+
 You can use the next commands to determine the position of the table:
 \begin{center}
 \begin{tabular}{| l | l |}
 \hline
 Command & Result \\
 \hline
-\verb|t| & De tabel is met zijn top gealigneerd op de onderkant van de regel. \\
-\verb|b| & De tabel is met zijn onderkant gealigneerd aan de onderkant van de regel. \\
-\verb|c| & De tabel is gecentreerd rond de onderkant van de regel. \\
+\verb|t| & The top of the table is aligned on the bottom of the line.\\
+\verb|b| & The bottom of the table is aligned to the bottom of the line. \\
+\verb|c| & The center of the table is aligned at the bottom of the line. \\
 \hline
 \end{tabular}
 \end{center}
-
-Bij het bepalen van de opmaak, bepaal je ook het aantal kolommen waaruit de tabel bestaat. Om te bepalen hoe deze kolommen eruit zien kunnen de volgende commando's worden aangeroepen:
+In the definition of the layout you also need to define how many columns are in the table. To define the layout of the columns the following specifiers exist:
 \begin{center}
 \begin{tabular}{| l | l |}
 \hline
 
-Commando & Resultaat \\
+Command & Result\\
 \hline
 \verb|l| & Adds a column with left-justified text. \\
 \verb|r| &  Adds a column with right-justified text. \\
 \verb|c| & Adds a column with centered text. \\
-\verb|p{x}| & De tekst wordt uitgevuld over een breedte \verb|x|. \\
-\verb|*{x}{opmaak}| & Herhaald de structuur in \verb|opmaak| \verb|x| keer. \\
+\verb|p{x}| & The text is justified to the width of \verb|x|. \\
+\verb|*{x}{layout}| & Repeats the structure in \verb|layout| \verb|x| times. \\
 $\mid$ & Adds vertical line. \\
-$\mid\mid$ & Adds dubble vertical line. \\
-\verb|@{text}| & Gebruikt \verb|text| als verticale lijn. \\
+$\mid\mid$ & Adds double vertical line. \\
+\verb|@{text}| & Uses \verb|text| as a vertical line. \\
 \hline
 \end{tabular}
 \end{center}
@@ -358,33 +397,43 @@ Time in months & Number of rabbits & Computation \\
 \hline
 0 & 1 & 1 \\
 1 & 2 & 1+1  \\
-2 & 3 & 2+1 \\
+2 & 3 & 1+2 \\
 3 & 5 & 2+3 \\
 4 & 8 & 3+5 \\
 5 & 13 & 5+8 \\
 6 & 21 & 8+13 \\
 $\vdots$ & $\vdots$ & $\vdots$ \\
 \hline
-\end{tabular}\\\\\\
+\end{tabular}\\
+	
 This table can be invoked by the next code:
 \begin{verbatim}
-\hline
-Time in months & Number of rabbits & Computation \\
-\hline
-0 & 1 & 1 \\
-1 & 2 & 1+1  \\
-2 & 3 & 2+1 \\
-3 & 5 & 2+3 \\
-4 & 8 & 3+5 \\
-5 & 13 & 5+8 \\
-6 & 21 & 8+13 \\
-$\vdots$ & $\vdots$ & $\vdots$ \\
-\hline
+\begin{tabular}[c]{| l | c | r |}
+	\hline
+	Time in months & Number of rabbits & Computation \\
+	\hline
+	0 & 1 & 1 \\
+	1 & 2 & 1+1  \\
+	2 & 3 & 1+2 \\
+	3 & 5 & 2+3 \\
+	4 & 8 & 3+5 \\
+	5 & 13 & 5+8 \\
+	6 & 21 & 8+13 \\
+	$\vdots$ & $\vdots$ & $\vdots$ \\
+	\hline
+\end{tabular}
 \end{verbatim}
 
 \section{Inserting images}
-It is possible to include images to \LaTeX. You first need to place \verb|\usepackage{graphicx}| in your preamble. This package makes sure you can include images. Secondly you use the code \verb|\includegraphics{picture.jpg}| to actually include the image. The image needs to be in the folder of your \LaTeX-code to actually include it. Be aware: \LaTeX\ can only include \verb|.png|- and \verb|.jpg|-images with the \verb|graphicx| package.\\
-You can use \verb|\includegraphics[scale=...]{picture.jpg}| to alter the size of your picture. You can give the scale of the images, but you can also use \verb|width=...\textwidth|. This way the images will also be scaled to the desired size.
+It is possible to include images to \LaTeX. 
+You first need to place \verb|\usepackage{graphicx}| in your preamble. 
+This package makes sure you can include images. 
+Secondly you use the code \verb|\includegraphics{picture.jpg}| to actually include the image. 
+The image needs to be in the folder of your \LaTeX-code to actually include it. 
+Be aware: \LaTeX\ can only include \verb|.pdf|-, \verb|.png|- and \verb|.jpg|-images with the \verb|graphicx| package.\\
+You can use \verb|\includegraphics[scale=0.5]{picture.jpg}| to alter the size of your picture. 
+You can give the scale of the images, but you can also use \verb|[width=0.9\textwidth]|. 
+This way the images will also be scaled to the desired size.
 
 \subsection{Placement of the picture}
 It is often difficult to place the picture on the desired spot. Therefore you need to place the picture in a floating environment. This can be accomplised by
@@ -393,11 +442,11 @@ It is often difficult to place the picture on the desired spot. Therefore you ne
 \begin{figure}[]
 	\centering
 	\caption{Caption of picture}
-	\includegraphics{width=0.5\textwidth]{picture.jpg}
+	\includegraphics[width=0.5\textwidth]{picture.jpg}
 \end{figure}
 \end{verbatim}
 \end{center}
-Commands can be given between the brackes of \verb|\begin{figure}[]| for the placement of the picture. Below you can find some commands that are useful.
+Commands can be given between the square brackets of \verb|\begin{figure}[]| for the placement of the picture. Below you can find some commands that are useful.
 \begin{center}
 \begin{tabular}{| l | l |}
 \hline
@@ -409,7 +458,7 @@ t & Place environment on the top of the page. \\
 \hline
 b & Place environment on the bottom of the page. \\
 \hline
-! & Override \LaTeX's internal parameters  for determining "good" float positions.\\
+! & Override \LaTeX's internal parameters for determining ``good" float positions.\\
 \hline
 \end{tabular}
 \end{center}
@@ -454,22 +503,24 @@ To conclude it is also possible to put different pictures next to or above each 
 \begin{verbatim}
 \begin{figure}
 	\centering
-	\subfloat[Description 1]{\includegraphics[width=0.3\textwidth]{graph1}
-	\subfloat[Description 2]{\includegraphics[width=0.3\textwidth]{graph2} \\
-	\subfloat[Description 3]{\includegraphics[width=0.3\textwidth]{graph3}
-	\subfloat[Description 4]{\includegraphics[width=0.3\textwidth]{graph4}
-	\caption{Graphs of ...}
+	\subfigure[Description 1]{\includegraphics[width=0.4\textwidth]{graph1}
+	~
+	\subfigure[Description 2]{\includegraphics[width=0.4\textwidth]{graph2} \\
+	\subfigure[Description 3]{\includegraphics[width=0.4\textwidth]{graph3}
+	~
+	\subfigure[Description 4]{\includegraphics[width=0.4\textwidth]{graph4}
+	\caption{Four graphs of ...}
 \end{figure}
 \end{verbatim}
 \end{center}
 
-\section{Impliment code}
+\section{Inserting code}
 
-For implimenting code you can use the package \textit{listings}. This gives an environment \emph{lstlisting}. You put yout code between
+For displaying code you can use the package \textit{listings}. This gives an environment \emph{lstlisting}. You put yout code between
 \verb+\begin{lstlisting}+ and \verb+\end{lstlisting}+. However, you need to specify which programming language you use; If you use C++ for example put
 \verb|\lstset{language=C++}| \emph{above} \verb+\begin{document}+.
 
-De \LaTeX-code
+The \LaTeX-code
 \begin{verbatim}
 \begin{lstlisting}
   int main (int argc, char** argv) {
@@ -478,7 +529,7 @@ De \LaTeX-code
   }
 \end{lstlisting}
 \end{verbatim}
-has for example
+gives for example
 \begin{lstlisting}
   int main (int argc, char** argv) {
     std::cout << "Hello world" << std::endl;
@@ -487,21 +538,22 @@ has for example
 \end{lstlisting}
 as output.
 
-You can easily impliment the file by using:
+You can easily implement the file by using:
 \begin{verbatim}
-\lstinputlisting{bestandnaam.extensie}
+\lstinputlisting{filename.extension}
 \end{verbatim}
 
 
-\section{References}
-When numbering things you can use the command
-\verb+\label{HereAName}+ The exact location for this code is troublesome; \verb|\label{...}| remembers simply the last generated number in the current scope. When you have put \verb|\label{...}| on the right spot, then you can use the number with \verb+\ref{HierEenNaam}+. You can also use
- \verb+\pageref{HierEenNaam}+ to refer to the page where the label is placed.
+\section{References \& Citations}
+When numbering things you can use the command \verb+\label{HereAName}+. 
+
+When you have put \verb|\label{HereAName}| on the right spot, then you can use the number with \verb+\ref{HereAName}+. 
+You can also use \verb+\pageref{HereAName}+ to refer to the page where the label is placed.
 
 If you want a footnote in your text use
 \verb+\footnote{This is a footnote}+\footnote{This is a footnote}.
 
-For extensive references use
+For extensive citations use
 \begin{verbatim}
 \begin{thebibliography}{99}
     \bibitem{afbeeldingen} Wikibooks, \emph{LaTeX/Floats, Figures and Captions
@@ -509,18 +561,18 @@ For extensive references use
         \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}
 \end{thebibliography}
 \end{verbatim}
-Afterwards, you can use \verb.\cite{afbeeldingen}. to refer to the url with more information about the imgage \cite{image}.
+Afterwards, you can use \verb.\cite{image}. to refer to the url with more information about the image.
 
-\textbf{For references it is important to compile the code twice. Otherwise there will appear questionmarks or old numberings}.
+\textbf{For references it is important to compile the code twice. Otherwise questionmarks or outdated numberings will appear}.
 
 \section{Other interesting packages}
-Beside all this, there are numberous packages to make your life easier. You should search for them on the internet!
+Beside all this, there are several other packages to make your life easier. You should search for them on the internet!
 \begin{itemize}
-	\item \verb&\usepackage{hyperref}& References within your document, url's and clickable tables of content in the \verb+.pdf+. Look into the options of this package. Tables of contents can be created by using \verb&\tableofcontents&.
-	\item \verb&\usepackage{beamer}& To create beamer-presentations (powerpoint).
 	\item \verb&\usepackage{fancyhdr}& For intelligent headers en footers on your page
-	\item \texttt{latexmk} Is able to automise the whole compileproces.
+	\item \verb&\usepackage[section]{placeins}& Enforce that floats such as figures do not cross sections. In addition the command \verb&\FloatBarrier& can be used to manually define a barrier for all floating objects.
+	\item \texttt{latexmk} Is able to automise the whole compilation process.
 	\item \verb&\usepackage{sidecap}& For captions beside your floats instead of under or above them.
+	\item \verb&\usepackage{beamer}& To create beamer-presentations (powerpoint).
 	\item Did you know, \verb&\\&, the command for linebreak, has an optional argument. try for example \verb&\\[5cm]& .
 	
 \end{itemize}
