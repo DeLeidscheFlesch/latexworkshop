@@ -50,7 +50,7 @@
 
 \section{Introduction}
 
-This is the manual for the \LaTeX workshop of De Leidsche Flesch.
+This is the manual for the \LaTeX\ workshop of De Leidsche Flesch.
 Please read through this manual first. You can then start working on the corresponding exercises. 
 When working on these exercises, you should use both this manual and the internet to look things up.
 
@@ -59,12 +59,11 @@ This is the intended design of the workshop, because later, when using \LaTeX, y
 and therefore it is important that you are able to solve these problems. Furthermore, please remember that there are often several ways to portray things, with a slightly different layout. 
 This is simply a matter of preference.
 
-If you find creating \LaTeX documents quite difficult, please utilize the online help. The wikibook about \LaTeX (\url{https://en.wikibooks.org/wiki/LaTeX}) is very approachable and most recurring situations are extensively described there. 
-Another useful source of help can be found at \url{https://www.sharelatex.com/learn/}, related to the onlin editor ShareLaTeX.
+If you find creating \LaTeX\ documents quite difficult, please utilize the online help. The wikibook about \LaTeX\ (\url{https://en.wikibooks.org/wiki/LaTeX}) is very approachable and most recurring situations are extensively described there. 
+Another useful source of help can be found at \url{https://www.sharelatex.com/learn/}, related to the online editor ShareLaTeX.
 
 If you can not find the command of a certain symbol, please try \url{http://detexify.kirelabs.org}. 
-On this website, you can draw the symbol you are looking for, and it will find the corresponding command for you
-\footnote{An Android app is also available: \url{https://play.google.com/store/apps/details?id=website.marty.detexify\&hl=en}.}. 
+On this website, you can draw the symbol you are looking for, and it will find the corresponding command for you\footnote{An Android app is also available: \url{https://play.google.com/store/apps/details?id=website.marty.detexify\&hl=en}.}. 
 
 \subsection{Starting}
 
@@ -77,15 +76,16 @@ To start with the workshop, please complete the following steps:
 \item Take your bundle of exercises.
 \item You can now start making the exercises. For inspiration, read the manual carefully and scour the internet.
 \end{enumerate}
-An online TeX editor has existed for a few years: Sharelatex\footnote{\url{https://www.sharelatex.com}}, which is for making \LaTeX documents \emph{in the cloud}. 
+An online TeX editor has existed for a few years: Sharelatex\footnote{\url{https://www.sharelatex.com}}, which is for making \LaTeX\ documents \emph{in the cloud}. 
 It works like Google Docs: it is accessible from every computer and all files you make will be saved online. 
 This way, you can never forget your homework.
 
+\newpage
 \section{New document}
 
 
 A \LaTeX\ document consists of 2 parts. The first part is the preamble. The things written here will be valid throughout the whole document, such as the right packages and fonts. The second part starts at \verb.\begin{document}. and ends at 
-\verb.\end{document}. The contents of your document are inbetween these two commands.
+\verb.\end{document}.. The contents of your document are inbetween these two commands.
 
 You can put comments in your .tex file, without them being displayed in your PDF. 
 You can accomplish this by using \verb.%. in front of your commentary.
@@ -94,7 +94,7 @@ You can accomplish this by using \verb.%. in front of your commentary.
 
 \begin{enumerate}
 
-	\item At the top, you put \verb.\documentclass{article}. This command tells your compiler what kind of text you are writing, in this case an article. 
+	\item At the top, you put \verb.\documentclass{article}.. This command tells your compiler what kind of text you are writing, in this case an article. 
 		It specifies for example the font size. 
 		The article class is the best in almost every situation. 
 	
@@ -125,7 +125,7 @@ You can accomplish this by using \verb.%. in front of your commentary.
         \verb|\author{A. Uthor}|\\
         \verb.\date{\today}., the command \verb.\today. automatically adds the correct date.
 
-	\item The last thing you do is to add  \verb.\begin{document}. and \verb.\end{document}.
+	\item The last thing you do is to add  \verb.\begin{document}. and \verb.\end{document}..
 	Between these two commands you put the body of your document.
 
 	\item Compile your document.
@@ -190,7 +190,7 @@ Just like Microsoft Word, \LaTeX{} provides the option of presenting text in dif
 \begin{itemize}
 \item \textbf{bold}, type \verb.\textbf{text}.
 \item \textit{italics}, type \verb.\textit{text}.
-\item \textcolor{red}{color}, typ \verb|\textcolor{color}{text}| or \verb|{\color{color}text}|.
+\item \textcolor{red}{color}, typ \verb|\textcolor{color}{text}| or \verb|{\color{color}text}|
 \item \small small, type \verb.\small. followed by text.
 \item \large big, type \verb.\large.
 \item \Large bigger, type \verb.\Large.
@@ -202,7 +202,7 @@ Type \verb.\normalsize. after this to continue in the usual textsize.
 
 \section{Math Mode}
 \subsection{Display Equations}
-If you want formula's and equations in your reports then you will have to work in "Math Mode". 
+If you want formula's and equations in your reports then you will have to work in ``Math Mode". 
 There are multiple way to enter Math Mode, the 3 most used methods are \textit{math}, \textit{displaymath} and \textit{align}, in which you can type mathematical formula's. 
 In \textit{math} the mathematical symbols will just appear inline so on the textline itself\footnote{for some reason this does not always work for titles. You will need the package \textit{fixltx2e} to make this work}, like so: $a^n+b^n=c^n$. 
 This environment can be invoked in multiple ways. 
@@ -239,11 +239,13 @@ This can be done by putting \verb.\left. and \verb.\right. before the brackets t
 
 Is created by the following code:\\
 \verb.\[\left| -\frac{1}{2} \right| ^3 = \left( \frac{1}{8} \right)\].
+
 If you want to match an opening bracket with a closing bracket on a different line, use the invisible bracket \verb|\right.| denoted with a period, e.g. the end of a long set definition on a new line:
 \[\left.\text{s.t. } f^2(x) < \frac{\epsilon}{2} \right\} \]
 Is created using the following code:\\
 \verb&\[\left.\text{s.t. } f^2(x) < \frac{\epsilon}{2} \right\} \]&
-(Note the escape of the curly bracket here)
+(Note the escape of the curly bracket here).
+
 \subsection{Roots and fractions}
 When using math you will often encounting roots and fractions. For displaying the fraction $\frac{a}{b}$ type the code \verb|\frac{a}{b}|.
 For displaying the square root $\sqrt{a}$ we use \verb|\sqrt{a}| and for  $\sqrt[n]{a}$ we use \verb|\sqrt[n]{a}|. 
@@ -574,6 +576,7 @@ Beside all this, there are several other packages to make your life easier. You 
 	\item \verb&\usepackage{sidecap}& For captions beside your floats instead of under or above them.
 	\item \verb&\usepackage{beamer}& To create beamer-presentations (powerpoint).
 	\item Did you know, \verb&\\&, the command for linebreak, has an optional argument. try for example \verb&\\[5cm]& .
+	\item Lion has its own \LaTeX-class for writing templates\cite{thesistemplate}. This basic template does a lot of the work for you, for example the layout of the front page.
 	
 \end{itemize}
 

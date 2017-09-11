@@ -34,7 +34,7 @@
 	
 \section{Tekst}
 	\begin{enumerate}
-		\item Zoek op internet een korte uitleg op van de definitie van Latex (\'e\'en zin), en citeer deze zin. Gebruik hiervoor een \verb+\footnote{}+ om te verwijzen naar je bron, en eventueel een \verb+\url{}+ (hierbij moet je het pakket `url' includen).
+		\item Zoek op internet een korte uitleg op van de definitie van \LaTeX\ (\'e\'en zin), en citeer deze zin. Gebruik hiervoor een \verb+\footnote{}+ om te verwijzen naar je bron, en eventueel een \verb+\url{}+ (hierbij moet je het pakket `url' includen).
 		\item Zoek op (op internet) hoe je accenten kunt maken, zoals co\"ordinaat, caf\'e, cura\c{c}ao\"enaar, etc. Kijk ook naar het verschil tussen 'tekst' en `tekst' (let op de accentjes)
 		\item Sommige karakters, zoals \{ hebben al een betekenis binnen \LaTeX. Hoe denk je dat je deze karakters in een tekst zou kunnen weergeven in de PDF. Tip: hoe zien de commando's er standaard uit?
 		\item Probeer de verschillende opsommingen en dingen die uitgelegd staan in de handleiding eens zelf en probeer bijvoorbeeld een nieuwe soort opsomming te maken.
@@ -46,9 +46,9 @@
 	\item Reproduceer de volgende formules, let op de accolades!
 	\begin{itemize}
 		\renewcommand{\labelitemi}{\(\circ\)}
-			\item\(a_{1,1} + a_{1,2} + \ldots + a_{1,n} = \sum_{i = 1}^n a_{1,i}\)\\
-			\item\( 1 \in \{ x~|~\mathbb{R} \backslash 2^{3^4} \}\)\\
-			\item\(\lim_{n \to \infty} 2^{-n} = 0\)\\
+			\item\(a_{1,1} + a_{1,2} + \ldots + a_{1,n} = \displaystyle\sum_{i = 1}^n a_{1,i}\)\\
+			\item\( 1 \in \left\{ x~|~\mathbb{R} \backslash 2^{3^4} \right\}\)\\
+			\item\(\displaystyle\lim_{n \to \infty} 2^{-n} = 0\)\\
 			\item\(\log_2(x\cdot y) \lor \log_4(x\cdot y)\)
 		\end{itemize}
 		
@@ -58,7 +58,7 @@
 	\item Probeer zelf de verschillende dingen uit die uitgelegd staan in de handleiding.
 	\item Reproduceer de volgende formules:
 	\begin{enumerate}
-		\item \[  \{(a,b) \in \mathbb{Z}^2 : b \neq 0\} \ni (0,1) \]
+		\item \[  \left\{(a,b) \in \mathbb{Z}^2 : b \neq 0\right\} \ni (0,1) \]
 		\item \[\overrightarrow{AB_{\pm}} = \langle a, \pm b \rangle \neq a\mathbf{i} \mp b\mathbf{j}\]
 		\item \euro 42,- (hiervoor heb je een pakket nodig)
 		\item Let op de spatie tussen \textquotesingle\(\exists\)\textquotesingle \ en \textquotesingle\(\eta\)\textquotesingle! Hint: gebruik \verb|\stackrel{...}{...}| en \verb.\mathcal.

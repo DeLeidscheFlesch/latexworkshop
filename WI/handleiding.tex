@@ -61,7 +61,9 @@ en het dus belangrijk is om dit op te kunnen lossen. Onthoud verder ook dat er
 meestal meerdere manieren zijn om iets weer te geven, met telkens net een iets
 andere lay-out. Het is vaak een kwestie van wat je fijner vindt.
 
-Mocht het maken van documenten in \LaTeX je moeilijk afgaan, probeer dan gebruik te maken van online hulpmiddelen. De wikibook over \LaTeX, te vinden op \url{https://en.wikibooks.org/wiki/LaTeX}, is een zeer toegankelijk hulpmiddel waar de meest voorkomende situaties uitgebreid in beschreven staan. Mocht je het commando van een bepaald symbool niet kunnen vinden, probeer dan \url{http://detexify.kirelabs.org}, waar je het symbool dat je zoek kan tekenen, en het bijbehorende commando dan voor je gevonden wordt\footnote{Voor android is er ook een app beschikbaar: \url{https://play.google.com/store/apps/details?id=website.marty.detexify\&hl=nl}.}.
+Mocht het maken van documenten in \LaTeX\ je moeilijk afgaan, probeer dan gebruik te maken van online hulpmiddelen. De wikibook over \LaTeX, te vinden op \url{https://en.wikibooks.org/wiki/LaTeX}, is een zeer toegankelijk hulpmiddel waar de meest voorkomende situaties uitgebreid in beschreven staan. Een ander nuttig hulpmiddel is de informatiepagina van de online editor ShareLaTeX, te vinden op \url{https://www.sharelatex.com/learn/}.
+
+Mocht je het commando van een bepaald symbool niet kunnen vinden, probeer dan \url{http://detexify.kirelabs.org}, waar je het symbool dat je zoek kan tekenen, en het bijbehorende commando dan voor je gevonden wordt\footnote{Voor android is er ook een app beschikbaar: \url{https://play.google.com/store/apps/details?id=website.marty.detexify\&hl=nl}.}.
 
 \subsection{Beginnen}
 
@@ -85,7 +87,7 @@ Je kunt ook commentaar in je .tex bestand zetten, zonder dat dit wordt weergeven
 
 \begin{enumerate}
 
-	\item Zet bovenaan \verb.\documentclass{article}. Dit commando geeft aan wat
+	\item Zet bovenaan \verb.\documentclass{article}.. Dit commando geeft aan wat
 	voor soort tekst je gaat schrijven, in dit geval dus article. Daarnaast
 	bepaalt het ook de lettergrootte. Een article is het beste voor bijna elke situatie.
 
@@ -97,7 +99,7 @@ Je kunt ook commentaar in je .tex bestand zetten, zonder dat dit wordt weergeven
 	Een aantal commands dat vaak in bestanden wordt gebruikt zijn:
 	\begin{enumerate}[1)] 
         \item \verb.\usepackage[a4paper]{geometry}. Deze zorgt dat de afmetingen van je bestand op a4 grootte zijn.
-        \item \verb.\usepackage[english,dutch]{babel}. Deze zorgt voor een goede regelafbreking en goede vertalingen. Hierbij moet je denken aan                'Hoofdstuk' in plaats van 'Chapter'. Hier wordt ook Engels geladen, omdat je bijvoorbeeld Engelse citaten kunt gebruiken. De laatst                  genoemde taal tussen de blokhaken is de hoofdtaal.
+        \item \verb.\usepackage[english, dutch]{babel}. Deze zorgt voor een goede regelafbreking en goede vertalingen. Hierbij moet je denken aan                'Hoofdstuk' in plaats van 'Chapter'. Hier wordt ook Engels geladen, omdat je bijvoorbeeld Engelse citaten kunt gebruiken. De laatst                  genoemde taal tussen de blokhaken is de hoofdtaal.
         \item \verb.\usepackage{parskip}. Deze zorgt voor een mooie weergave van alinea's.
         \item \verb.\usepackage{amsmath, amssymb}. Dit zijn pakketten die ervoor zorgen dat formules en andere wiskundige dingen mooier worden                  weergeven.
         \item \verb.\usepackage{graphicx}. Dit is een pakket om losse plaatjes toe te voegen.
@@ -111,7 +113,7 @@ Je kunt ook commentaar in je .tex bestand zetten, zonder dat dit wordt weergeven
     \item Zet in je preamble de volgende commands: 
 
         \verb.\title{titel}.\\
-        \verb.\author{auteur}.\\
+        \verb|\author{A. Uthor}|\\
         \verb.\date{\today}., het commando \verb.\today. voegt automatisch de goede datum toe.
 
 	\item Als laatste zet je \verb.\begin{document}. en \verb.\end{document}.
@@ -124,17 +126,17 @@ Je kunt ook commentaar in je .tex bestand zetten, zonder dat dit wordt weergeven
 \subsection{Tekst in document}
 
 \subsubsection{Titel en auteur}
-Zet bovenin je document \verb.\maketitle. Dit zorgt ervoor dat de gegevens die je in de preamble hebt ingevuld als titel op de goede plek in je document komen te staan. Dus er komt in dit geval een titel, auteur en datum te staan.
+Zet bovenin je document \verb.\maketitle.. Dit zorgt ervoor dat de gegevens die je in de preamble hebt ingevuld als titel op de goede plek in je document komen te staan. Dus er komt in dit geval een titel, auteur en datum te staan.
 
 \subsubsection{Inhoudsopgave}
-Een inhoudsopgave maak je simpel door het commando \verb.\tableofcontents. te typen. Daarna wil je beginnen met een nieuwe pagina, dus daaronder type je \verb.\newpage. 
+Een inhoudsopgave maak je simpel door het commando \verb.\tableofcontents. te typen. Daarna wil je beginnen met een nieuwe pagina, dus daaronder type je \verb.\newpage..
 
 \subsubsection{Kopjes}
-Een article document in \LaTeX\ maakt gebruik van sections, subsections, subsubsections en paragrafen. Zo is bijvoorbeeld in deze handleiding het kopje 'Nieuw document' een section. Deze maak je door te typen \verb.\section{Naam kopje}.
+Een article document in \LaTeX\ maakt gebruik van sections, subsections, subsubsections en paragrafen. Zo is bijvoorbeeld in deze handleiding het kopje 'Nieuw document' een section. Deze maak je door te typen \verb.\section{Naam kopje}..
 
-Het kopje 'Tekst in document' is een subsection. Deze maak je door te typen \verb.\subsection{Naam kopje}.
+Het kopje 'Tekst in document' is een subsection. Deze maak je door te typen \verb.\subsection{Naam kopje}..
 
-Het kopje 'Kopjes' is een subsubsection. Deze maak je door te typen \verb.\subsubsection{Naam kopje}.
+Het kopje 'Kopjes' is een subsubsection. Deze maak je door te typen \verb.\subsubsection{Naam kopje}..
 \paragraph{Paragraaf}
 Dan heb je ook nog een paragraaf, deze krijg je door het commando \verb.\paragraph{Naam paragraaf}. te typen. Dit kopje is een paragraaf.
 
@@ -142,14 +144,14 @@ Dan heb je ook nog een paragraaf, deze krijg je door het commando \verb.\paragra
 Je kunt alinea's maken door een lege regel tussen je tekst te maken. 
 
 \subsubsection{Opsommingen en lijsten}
-Je kunt een niet-genummerde opsomming maken door het commando \verb.\begin{itemize}. te typen. Eén punt in je opsomming maak je dan door \verb.\item. te typen, achter dit commando type je een spatie en daarachter de tekst die je in dat punt wil hebben. Aan het einde van je opsomming zet je \verb.\end{itemize}. 
+Je kunt een niet-genummerde opsomming maken door het commando \verb.\begin{itemize}. te typen. Eén punt in je opsomming maak je dan door \verb.\item. te typen, achter dit commando type je een spatie en daarachter de tekst die je in dat punt wil hebben. Aan het einde van je opsomming zet je \verb.\end{itemize}..
 \begin{itemize}
 \item Dit is het eerste punt van de niet-genummerde opsomming
 \item Dit het tweede
 \item Dit het laatste
 \end{itemize}
 
-Een genummerde opmaak, zoals eerdere opsommingen in deze handleiding, kun je maken door het commando \verb.\begin{enumerate}. te doen, dan maak je weer nummers door \verb.\item. te typen. Weer eindig je met \verb.\end{enumerate}. Zonder toevoegingen krijg je dan
+Een genummerde opmaak, zoals eerdere opsommingen in deze handleiding, kun je maken door het commando \verb.\begin{enumerate}. te doen, dan maak je weer nummers door \verb.\item. te typen. Weer eindig je met \verb.\end{enumerate}.. Zonder toevoegingen krijg je dan
 
 \begin{enumerate}
 \item voorbeeld 1
@@ -158,7 +160,7 @@ Een genummerde opmaak, zoals eerdere opsommingen in deze handleiding, kun je mak
 
 Wil je een andere opmaak of letters die oplopen dan type je \verb|\begin{enumerate}[a.]|. Dan krijg je dit:
 
-\begin{enumerate}[a]
+\begin{enumerate}[a.]
 \item voorbeeld 1
 \item voorbeeld 2
 \end{enumerate}
@@ -174,7 +176,7 @@ verschillende vormen te presenteren, hieronder een paar voorbeelden.
 \begin{itemize}
 \item \textbf{dik}, typ \verb.\textbf{tekst}.
 \item \textit{cursief}, typ \verb.\textit{tekst}.
-\item \textcolor{red}{kleur}, typ \verb|\textcolor{kleur}{tekst}| of \verb|{\color{kleur}tekst}|.
+\item \textcolor{red}{kleur}, typ \verb|\textcolor{kleur}{tekst}| of \verb|{\color{kleur}tekst}|
 \item \small klein, typ \verb.\small. en de tekst erachter
 \item \large groot, typ \verb.\large.
 \item \Large groter, typ \verb.\Large.
@@ -186,9 +188,9 @@ Typ hierna wel weer \verb.\normalsize. om verder te gaan in normale tekstgrootte
 
 \section{Wiskunde omgeving}
 \subsection{Vergelijkingen weergeven}
-Wil je formules in je verslag dan moet je gaan werken in een "wiskundige omgeving". Er zijn meerdere manieren om deze aan te roepen, de drie vaakst gebruikte zijn \textit{math}, \textit{displaymath} en \textit{align}, waarin je wiskundige formules kunt typen. Bij \textit{math} komen de wiskundige symbolen in de regel\footnote{Om bepaalde redenen werkt dit soms niet in koppen. Je zult het package \textit{fixltx2e} moeten toevoegen om het te laten werken} te staan, zoals $a^n+b^n=c^n$. Deze omgeving kun je op verschillende manieren aanroepen. De bekendste is het zetten van de wiskundige formules tussen \verb|$|-tekens.  \\
+Wil je formules in je verslag dan moet je gaan werken in een ``wiskundige omgeving". Er zijn meerdere manieren om deze aan te roepen, de drie vaakst gebruikte zijn \textit{math}, \textit{displaymath} en \textit{align}, waarin je wiskundige formules kunt typen. Bij \textit{math} komen de wiskundige symbolen in de regel\footnote{Om bepaalde redenen werkt dit soms niet in koppen. Je zult het package \textit{fixltx2e} moeten toevoegen om het te laten werken} te staan, zoals $a^n+b^n=c^n$. Deze omgeving kun je op verschillende manieren aanroepen. De bekendste is het zetten van de wiskundige formules tussen \verb|$|-tekens.  \\
 De \textit{displaymath} omgeving wordt gebruikt op de wiskundige symbolen te centreren, zoals
-\[ \frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi= -i\hbar \frac{\partial\Psi}{\partial t}.\]
+\[ \frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi= -i\hbar \frac{\partial\Psi}{\partial t}\]
 Je kunt deze omgeving aanroepen door de het tussen de volgende haken te plaatsen: \verb|\[|\dots\verb|\]|.\\
 Tot slot hebben we nog \textit{align}, bij deze omgeving worden de wiskundige symbolen gecentreerd en krijgen ze een verwijzing achter de vergelijking, zoals
 \begin{align}
@@ -198,13 +200,28 @@ Tot slot hebben we nog \textit{align}, bij deze omgeving worden de wiskundige sy
 Om een vergelijking zo weer te geven gebruik je \verb|\begin{align}| en \verb|\end{align}|. Wil je dit zonder verwijzingen gebruiken, dan type je \verb|\begin{align*}| en \verb|\end{align*}|. Om meerdere vergelijkingen onder elkaar te zetten, type je achter een vergelijking \verb.\\.. Gebruik het \verb|&|-teken om de formules goed onder elkaar te zetten, meestal gebruik je het voor het \verb|=|-teken. Als je zin hebt om te experimenteren, probeer dan uit te zoeken wat er gebeurt als je meerdere \verb|&|'s in dezelfde regel gebruikt.
 
 \subsection{Superscript en subscript}
-Bij het werken in en wiskunde omgeving worden subscript (\verb|_|) en superscript (\verb|^|) veel gebruikt. Zo kunnen we bijvoorbeeld de rij $a_1,a_2,\dots, a_{n-1}$ weergeven met de code \verb|a_1,a_2,\dots,a_{n-1}| en de verglijking $a^b\cdot a^c=a^{b+c}$ weergeven met de code \verb|a^b\cdot a^c=a^{b+c}|. Let wel op dat bij meer dan \'e\'en teken in super- of subscript dat er \{ en \} om heen staat. 
+Bij het werken in en wiskunde omgeving worden subscript (\verb|_|) en superscript (\verb|^|) veel gebruikt. Zo kunnen we bijvoorbeeld de rij $a_1, a_2, \dots, a_{n-1}$ weergeven met de code \verb|a_1,a_2,\dots,a_{n-1}| en de verglijking $a^b \cdot a^c = a^{b + c}$ weergeven met de code \verb|a^b \cdot a^c = a^{b + c}|. Let wel op dat bij meer dan \'e\'en teken in super- of subscript dat er \{ en \} om heen staat. 
+
+\subsection{Haakjes}
+
+Als we haken om grote symbolen in \textit{displaymath} zetten, zoals bijvoorbeeld om een breuk heen, is het belangrijk de haakjes te schalen naar het symbool.
+Dit kan worden gedaan door de \verb.\left. en \verb.\right. commandos toe te voegen aan de haakjes:
+\[\left| -\frac{1}{2} \right| ^3 = \left( \frac{1}{8} \right)\]
+
+wordt geproduceerd met de volgende code:\\
+\verb.\[\left| -\frac{1}{2} \right| ^3 = \left( \frac{1}{8} \right)\].
+
+Als je een linkerhaakje wilt laten matchen met een rechterhaakje op een andere regel kan je de onzichtbare \verb|\right.| gebruiken. Dit komt bijvoorbeeld voor bij lange definities van verzamelingen:
+\[\left.\text{s.t. } f^2(x) < \frac{\epsilon}{2} \right\} \]
+wat wordt geproduceerd door de code \\
+\verb&\[\left.\text{s.t. } f^2(x) < \frac{\epsilon}{2} \right\} \]&\\
+(Let op het escapen van de accolade).
 
 \subsection{Wortels en breuken}
 Bij het gebruik van wiskunde zul je ook veel breuken of wortels gebruiken. Voor het weergeven van de breuk $\frac{a}{b}$ typ je in je code \verb|\frac{a}{b}| en voor het weergeven van de wortel $\sqrt{a}$ gebruiken we \verb|\sqrt{a}| of voor $\sqrt[n]{a}$ gebruiken we \verb|\sqrt[n]{a}|. 
 
 \subsection{Speciale tekens}
-Er zijn veel symbolen die bij wiskunde gebruikt kunnen worden. In deze paragraaf zullen een aantal worden genoemd, maar er zijn er veel meer. Om snel op te kunnen zoeken welke code bij een teken hoort kun je de website of app Detexify \footnote{\url{http://detexify.kirelabs.org/}} raadplegen. Hierbij kun je denken aan integralen, maar ook aan bijvoorbeeld $\alpha$ en $\beta$. Hieronder staan de meest gebruikte symbolen uit het griekse alfabet.
+Er zijn veel symbolen die bij wiskunde gebruikt kunnen worden. In deze paragraaf zullen een aantal worden genoemd, maar er zijn er veel meer. Om snel op te kunnen zoeken welke code bij een teken hoort kun je de website of app Detexify\footnote{\url{http://detexify.kirelabs.org/}} raadplegen. Hierbij kun je denken aan integralen, maar ook aan bijvoorbeeld $\alpha$ en $\beta$. Hieronder staan de meest gebruikte symbolen uit het griekse alfabet.
 \begin{center}
 \begin{tabular}{| l | l | l | l | l | l | l | l | l | l | l | l | }
 \hline
@@ -237,7 +254,7 @@ $\lim$ & \verb|\lim| & $\log$ & \verb|\log| & $\max$ & \verb|\max| & $\min$ & \v
 \end{tabular}
 \end{center}
 
-Naast de tekens uit het Griekse alfabet en de standaard functies hebben we ook nog kwantoren. De kwantoren kunnen zich aanpassen naar de omgeving waarin zij zich bevinden. Zo worden zij groter weergeven in \textit{displaymath} dan in \textit{math}. De onderstaande kwantoren worden het meest gebruikt:
+Naast de tekens uit het Griekse alfabet en de standaard functies hebben we ook nog enkele sommen, producten, integralen etc. Deze symbolen kunnen zich aanpassen naar de omgeving waarin zij zich bevinden. Zo worden zij groter weergeven in \textit{displaymath} dan in \textit{math}. De symbolen hieronder worden het meest gebruikt:
 \begin{center}
 \begin{tabular}{| l | l | l | l | l | l | l | l |}
 \hline
@@ -254,7 +271,7 @@ Bij zowel $\sum$ als $\prod$ als $\lim$ is het netjes als in \textit{displaymath
 \[\sum_{n=0}^{\infty} \frac{1}{n}\]
 door de volgende code \verb|\sum_{n=1}^{\infty} \frac{1}{n}| te gebruiken. Bij bijvoorbeeld dubbele integralen is het netjes om het commando \verb|\limits| te gebruiken, dit zorgt er voor dat de grenzen op de juiste plek komen te staan. Vergelijk bijvoorbeeld:
 \[\iint_D \text{ met } \iint\limits_D\]
-verkregen door de code \verb|\[\iint_^D \text{ met } \iint\limits_D\]|, hierbij is de tweede correct.
+verkregen door de code \verb|\[\iint_D \text{ met } \iint\limits_D\]|, hierbij is de tweede correct.
 Tot slot hebben we nog een aantal tekens die handig zijn om te weten.
 \begin{center}
 \begin{tabular}{| l | l | l | l | l | l | l | l |}
@@ -263,6 +280,8 @@ Tot slot hebben we nog een aantal tekens die handig zijn om te weten.
 \hline 
 $\pm$ & \verb|\pm| & $\times$ & \verb|\times|& $\setminus$ & \verb|\setminus| & $\cdot$ & \verb|\cdot| \\
 \hline
+$\mp$ & \verb|\mp| & $\gg$ & \verb|\gg|& $\ll$ & \verb|\ll| & $\top$ & \verb|\top| \\
+\hline 
 $\leq$ & \verb|\leq| & $\in$ & \verb|\in| & $\subset$ & \verb|\subset| & $\subseteq$ & \verb|\subseteq|  \\
 \hline
 $\cong$ & \verb|\cong| & $\geq$ & \verb|\geq| & $\approx$ & \verb|\approx| & $\mid$ & \verb|\mid| \\
@@ -279,7 +298,7 @@ $\Downarrow$ & \verb|\Downarrow| & $\cdots$ & \verb|\cdots| & $\vdots$ & \verb|\
 \hline
 $\forall$ & \verb|\forall| & $\exists$ & \verb|\exists| & $\infty$ & \verb|\infty| & $\nabla$ & \verb|\nabla| \\
 \hline
-$\partial$ & \verb|\partial| & & & & & & \\
+$\partial$ & \verb|\partial| &$\ni$ &\verb|\ni| &$\supseteq$ &\verb|\supseteq| &$\Longrightarrow$ &\verb|\Longrightarrow| \\
 \hline
 \end{tabular}
 \end{center}
@@ -304,7 +323,8 @@ Tussen rechte lijnen & $\begin{vmatrix} a & b \\ c & d \end{vmatrix}$ & \verb|\b
 \end{center}
 
 \section{Tabellen}
-Er zijn verschillende mogelijkheden om een tabel aan te maken in een \LaTeX-bestand. De meest gebruikte zijn de tabel (\verb|\begin{tabular}[positie]{opmaak}|) en de array (\verb|\begin{array}[positie]{opmaak}|). Een array kan alleen worden aangemaakt in 
+Er zijn verschillende mogelijkheden om een tabel aan te maken in een \LaTeX-bestand. De meest gebruikte zijn de tabel (\verb|\begin{tabular}[positie]{opmaak}|)\\
+en de array (\verb|\begin{array}[positie]{opmaak}|). Een array kan alleen worden aangemaakt in 
 de wiskunde omgeving. \\
 Net als bij de matrices worden de elementen in een rij met een \verb|&| gescheiden en sluit je een rij af met \verb|\\|. Om een horizontale lijn in je tabel te krijgen plaats je \verb|\hline| in de code van je tabel.
 
@@ -346,7 +366,7 @@ Tijd in maanden & Aantal konijnen & Berekening \\
 \hline
 0 & 1 & 1 \\
 1 & 2 & 1+1  \\
-2 & 3 & 2+1 \\
+2 & 3 & 1+2 \\
 3 & 5 & 2+3 \\
 4 & 8 & 3+5 \\
 5 & 13 & 5+8 \\
@@ -357,23 +377,25 @@ $\vdots$ & $\vdots$ & $\vdots$ \\
 
 Deze tabel kan worden aangeroepen met de volgende code:
 \begin{verbatim}
+\begin{tabular}[c]{| l | c | r |}
 \hline
 Tijd in maanden & Aantal konijnen & Berekening \\
 \hline
 0 & 1 & 1 \\
 1 & 2 & 1+1  \\
-2 & 3 & 2+1 \\
+2 & 3 & 1+2 \\
 3 & 5 & 2+3 \\
 4 & 8 & 3+5 \\
 5 & 13 & 5+8 \\
 6 & 21 & 8+13 \\
 $\vdots$ & $\vdots$ & $\vdots$ \\
 \hline
+\end{tabular}
 \end{verbatim}
 
 \section{Afbeeldingen invoegen}
-Het is ook mogelijk om afbeeldingen in te voegen bij \LaTeX. Hiervoor heb je het moet je bovenaan je code \verb|\usepackage{graphicx}| zetten. Deze package zorgt ervoor dat je afbeeldingen kan invoegen. Vervolgens gebruik je de code \verb|\includegraphics{naam_afbeelding.jpg}| om de afbeelding ook daadwerkelijk in te voegen. Om dit te doen moet de afbeelding die je wilt invoegen ook in de map staan waarin je \LaTeX-code ook staat. Let op: \LaTeX\ kan alleen \verb|.png|- of \verb|.jpg|-bestanden lezen.  \\
-Om het formaat van de afbeelding aan te passen kun je de code\\ \verb|\includegraphics[scale=...]{naam_afbeelding.jpg}|. Hierbij geef je de schaal van de afbeelding, in plaats hiervan kun je ook \verb|width=...\textwidth| gebruiken. Zo wordt de afbeelding ook aangepast naar de gewenste grootte.
+Het is ook mogelijk om afbeeldingen in te voegen bij \LaTeX. Hiervoor heb je het moet je bovenaan je code \verb|\usepackage{graphicx}| zetten. Deze package zorgt ervoor dat je afbeeldingen kan invoegen. Vervolgens gebruik je de code \verb|\includegraphics{naam_afbeelding.jpg}| om de afbeelding ook daadwerkelijk in te voegen. Om dit te doen moet de afbeelding die je wilt invoegen ook in de map staan waarin je \LaTeX-code ook staat. Let op: \LaTeX\ kan alleen \verb|.pdf|-, \verb|.png|- of \verb|.jpg|-bestanden lezen.  \\
+Om het formaat van de afbeelding aan te passen kun je de code\\ \verb|\includegraphics[scale=0.5]{naam_afbeelding.jpg}|. Hierbij geef je de schaal van de afbeelding, in plaats hiervan kun je ook \verb|[width=0.9\textwidth]| gebruiken. Zo wordt de afbeelding ook aangepast naar de gewenste grootte.
 
 \subsection{Plaatsing van de afbeelding}
 Het is vaak ingewikkeld om de afbeelding ook daadwerkelijk op de gewenste plek te krijgen. Om dit voor elkaar te krijgen gaan we de afbeelding in een drijvende omgeving zetten. Dit kunnen we doen door 
@@ -382,7 +404,7 @@ Het is vaak ingewikkeld om de afbeelding ook daadwerkelijk op de gewenste plek t
 \begin{figure}[]
 	\centering
 	\caption{Bijschrift bij afbeelding}
-	\includegraphics{width=0.5\textwidth]{naam_afbeelding.jpg}
+	\includegraphics[width=0.5\textwidth]{naam_afbeelding.jpg}
 \end{figure}
 \end{verbatim}
 \end{center}
@@ -443,10 +465,12 @@ Tot slot is het ook mogelijk om verschillende afbeeldingen naast elkaar of onder
 \begin{verbatim}
 \begin{figure}
 	\centering
-	\subfloat[Beschrijving 1]{\includegraphics[width=0.3\textwidth]{grafiek1}
-	\subfloat[Beschrijving 2]{\includegraphics[width=0.3\textwidth]{grafiek2} \\
-	\subfloat[Beschrijving 3]{\includegraphics[width=0.3\textwidth]{grafiek3}
-	\subfloat[Beschrijving 4]{\includegraphics[width=0.3\textwidth]{grafiek4}
+	\subfigure[Beschrijving 1]{\includegraphics[width=0.4\textwidth]{grafiek1}
+	~
+	\subfigure[Beschrijving 2]{\includegraphics[width=0.4\textwidth]{grafiek2} \\
+	\subfigure[Beschrijving 3]{\includegraphics[width=0.4\textwidth]{grafiek3}
+	~
+	\subfigure[Beschrijving 4]{\includegraphics[width=0.4\textwidth]{grafiek4}
 	\caption{Grafieken van ...}
 \end{figure}
 \end{verbatim}
@@ -486,9 +510,7 @@ te gebruiken.
 
 \section{Referenties}
 Bij eigenlijke alle genummerde dingen kun het commando
-\verb+\label{HierEenNaam}+ gebruiken. De precieze locatie voor deze code is wat
-lastig; \verb|\label{...}| onthoudt namelijk simpelweg het laatstgegenereerde
-nummer in de huidige scope. Als je \verb|\label{...}| eenmaal op de juiste
+\verb+\label{HierEenNaam}+ gebruiken. Als je \verb|\label{...}| eenmaal op de juiste
 plaats gezet hebt, kun je het nummer gebruiken met \verb+\ref{HierEenNaam}+.
 Ook kun je met \verb+\pageref{HierEenNaam}+ verwijzen naar de pagina waar de
 label staat.
@@ -505,7 +527,7 @@ Voor uitgebreide referenties gebruik je
 \end{thebibliography}
 \end{verbatim}
 Vervolgens kan je met \verb.\cite{afbeeldingen}. naar bijvoorbeeld de url met
-meer info over afbeeldingen verwijzen\cite{afbeeldingen}.
+meer info over afbeeldingen verwijzen \cite{afbeeldingen}.
 
 \textbf{Voor verwijzingen is het belangrijk om de code 2x te compileren. Anders
 komen er vraagtekens of verouderde nummering te staan.}
@@ -513,11 +535,11 @@ komen er vraagtekens of verouderde nummering te staan.}
 \section{Overige interessante packages}
 Verder zijn er nog allerlei verschillende packages om je leven makkelijker te maken. Zoek ze eens op op internet!
 \begin{itemize}
-	\item \verb&\usepackage{hyperref}& Referenties binnen je document, url's, en klikbare inhoudsopgaves in de \verb+.pdf+. Kijk ook eens naar de opties van dit package. Inhoudsopgaves maak je trouwens met \verb&\tableofcontents&.
-	\item \verb&\usepackage{beamer}& Om beamer-presentaties te maken (powerpoint).
 	\item \verb&\usepackage{fancyhdr}& Voor intelligente headers en footers op je pagina.
+	\item \verb&\usepackage[section]{placeins}& Zorg ervoor dat floating objects niet voorbij een sectieovergang gaan. Daarnaast kan je met \verb&\FloatBarrier& handmatig een barriere defini\"eren voor alle floats.
 	\item \texttt{latexmk} Kan het hele compileerproces voor je automatiseren.
 	\item \verb&\usepackage{sidecap}& Voor captions naast je floats in plaats van onder of boven.
+	\item \verb&\usepackage{beamer}& Om beamer-presentaties te maken (powerpoint).
 	\item Wist je dat \verb&\\&, het commando voor een regelovergang, een optioneel argument heeft? Probeer bijvoorbeeld eens \verb&\\[5cm]& .
 	\item Het LION heeft een eigen \LaTeX-klasse voor het schrijven van templates. \cite{thesistemplate} Deze doet heel veel voorwerk voor je zoals de layout van de voorpagina etc.
 \end{itemize}
