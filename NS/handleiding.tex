@@ -61,7 +61,11 @@ en het dus belangrijk is om dit op te kunnen lossen. Onthoud verder ook dat er
 meestal meerdere manieren zijn om iets weer te geven, met telkens net een iets
 andere lay-out. Het is vaak een kwestie van wat je fijner vindt.
 
-Mocht het maken van documenten in \LaTeX  \ je moeilijk afgaan, probeer dan gebruik te maken van online hulpmiddelen. De wikibook over \LaTeX, te vinden op \url{https://en.wikibooks.org/wiki/LaTeX}, is een zeer toegankelijk hulpmiddel waar de meest voorkomende situaties uitgebreid in beschreven staan. Mocht je het commando van een bepaald symbool niet kunnen vinden, probeer dan \url{http://detexify.kirelabs.org}, waar je het symbool dat je zoek kan tekenen, en het bijbehorende commando dan voor je gevonden wordt.
+Mocht het maken van documenten in \LaTeX  \ je moeilijk afgaan, 
+probeer dan gebruik te maken van online hulpmiddelen. 
+De wikibook over \LaTeX, te vinden op \url{https://en.wikibooks.org/wiki/LaTeX}, 
+is een zeer toegankelijk hulpmiddel waar de meest voorkomende situaties uitgebreid in beschreven staan. 
+Mocht je het commando van een bepaald symbool niet kunnen vinden, probeer dan \url{http://detexify.kirelabs.org}, waar je het symbool dat je zoek kan tekenen, en het bijbehorende commando dan voor je gevonden wordt.
 
 \subsection{Beginnen}
 
@@ -185,16 +189,23 @@ Typ hierna wel weer \verb.\normalsize. om verder te gaan in normale tekstgrootte
 
 \section{Wiskunde omgeving}
 \subsection{Vergelijkingen weergeven}
-Wil je formules in je verslag dan moet je gaan werken in een "wiskundige omgeving". Er zijn meerdere manieren om deze aan te roepen, de drie vaakst gebruikte zijn \textit{math}, \textit{displaymath} en \textit{align}, waarin je wiskundige formules kunt typen. Bij \textit{math} komen de wiskundige symbolen in de regel\footnote{Om bepaalde redenen werkt dit soms niet in koppen. Je zult het package \textit{fixltx2e} moeten toevoegen om het te laten werken} te staan, zoals $a^n+b^n=c^n$. Deze omgeving kun je op verschillende manieren aanroepen. De bekendste is het zetten van de wiskundige formules tussen \verb|$|-tekens.  \\
+Wil je formules in je verslag dan moet je gaan werken in een ``wiskundige omgeving". 
+Er zijn meerdere manieren om deze aan te roepen, de drie vaakst gebruikte zijn \textit{math}, \textit{displaymath} en \textit{align}, waarin je wiskundige formules kunt typen. 
+Bij \textit{math} komen de wiskundige symbolen in de regel\footnote{Om bepaalde redenen werkt dit soms niet in koppen. 
+Je zult het package \textit{fixltx2e} moeten toevoegen om het te laten werken} te staan, zoals $a^n+b^n=c^n$. 
+Deze omgeving kun je op verschillende manieren aanroepen. 
+Zoals alle omgevingen in \LaTeX\ werkt \verb|\begin{math}...\end{math}|, maar dit is veel typwerk. De bekendste en veel kortere manier is het zetten van de wiskundige formules tussen \verb|$|-tekens, gebruik deze, aangezien dat veel typwerk scheelt.\\
 De \textit{displaymath} omgeving wordt gebruikt op de wiskundige symbolen te centreren, zoals
 \[ \frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r})\Psi= -i\hbar \frac{\partial\Psi}{\partial t}.\]
-Je kunt deze omgeving aanroepen door de het tussen de volgende haken te plaatsen: \verb|\[|\dots\verb|\]|.\\
+Je kunt deze omgeving aanroepen door het tussen de volgende haken te plaatsen: \verb|\[|\dots\verb|\]|.\\
 Tot slot hebben we nog \textit{align}, bij deze omgeving worden de wiskundige symbolen gecentreerd en krijgen ze een verwijzing achter de vergelijking, zoals
 \begin{align}
 \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} &= \frac{\pi}{e}\\
 \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} &= \frac{\pi}{e}
 \end{align}
-Om een vergelijking zo weer te geven gebruik je \verb|\begin{align}| en \verb|\end{align}|. Wil je dit zonder verwijzingen gebruiken, dan type je \verb|\begin{align*}| en \verb|\end{align*}|. Om meerdere vergelijkingen onder elkaar te zetten, type je achter een vergelijking \verb.\\.. Gebruik het \verb|&|-teken om de formules goed onder elkaar te zetten, meestal gebruik je het voor het \verb|=|-teken. Als je zin hebt om te experimenteren, probeer dan uit te zoeken wat er gebeurt als je meerdere \verb|&|'s in dezelfde regel gebruikt.
+Om een vergelijking zo weer te geven gebruik je \verb|\begin{align}| en \verb|\end{align}|. 
+Wil je dit zonder verwijzingen gebruiken, dan type je \verb|\begin{align*}| en \verb|\end{align*}|. 
+Om meerdere vergelijkingen onder elkaar te zetten, type je achter een vergelijking \verb.\\.. Gebruik het \verb|&|-teken om de formules goed onder elkaar te zetten, meestal gebruik je het voor het \verb|=|-teken. Als je zin hebt om te experimenteren, probeer dan uit te zoeken wat er gebeurt als je meerdere \verb|&|'s in dezelfde regel gebruikt.
 
 \subsection{Superscript en subscript}
 Bij het werken in en wiskunde omgeving worden subscript (\verb|_|) en superscript (\verb|^|) veel gebruikt. Zo kunnen we bijvoorbeeld de rij $a_1,a_2,\dots, a_{n-1}$ weergeven met de code \verb|a_1,a_2,\dots,a_{n-1}| en de verglijking $a^b\cdot a^c=a^{b+c}$ weergeven met de code \verb|a^b\cdot a^c=a^{b+c}|. Let wel op dat bij meer dan \'e\'en teken in super- of subscript dat er \{ en \} om heen staat. 
